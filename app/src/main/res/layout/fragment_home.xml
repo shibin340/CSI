@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f0f0f0">
+
+ <ScrollView
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:id="@+id/home_scroll">
+
+     <RelativeLayout
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:background="#f0f0f0">
+
+    <TextView
+        android:id="@+id/tvuser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:padding="1dp"
+        android:textColor="#37474F"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ll1"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/tvuser"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvbday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#F9A825"
+            android:textSize="18sp"
+            android:text="Birthday Notifications"
+            android:layout_margin="5dp"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv2"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scrollbars="vertical"
+            android:layout_below="@+id/tvbday"
+            />
+
+        <TextView
+            android:id="@+id/tvevents"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rcv2"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:text="Upcoming Events"
+            android:textColor="#F9A825"
+            android:textSize="18sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv3"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scrollbars="vertical"
+            android:layout_below="@+id/tvevents"
+            android:layout_margin="5dp"
+            />
+
+    </RelativeLayout>
+         <RelativeLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/items1"
+             android:layout_below="@+id/ll1"
+             android:layout_margin="25dp"
+             android:gravity="center">
+             <Button
+                 android:id="@+id/btadvance"
+                 android:layout_width="80dp"
+                 android:layout_height="80dp"
+                 android:layout_alignParentLeft="true"
+                 android:background="#ef5350"
+                 android:textSize="30sp"
+                 android:text="A" />
+
+             <TextView
+                 android:id="@+id/tvadvance"
+                 android:layout_width="80dp"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@id/btadvance"
+                 android:layout_alignParentLeft="true"
+                 android:gravity="center"
+                 android:textStyle="bold"
+                 android:textColor="#212121"
+                 android:text="Advance" />
+
+             <Button
+                 android:id="@+id/bttimesheet"
+                 android:layout_width="80dp"
+                 android:layout_height="80dp"
+                 android:layout_centerHorizontal="true"
+                 android:background="#D81B60"
+                 android:padding="10dp"
+                 android:text="T"
+                 android:textSize="30sp"
+                 android:textColor="#000000" />
+
+             <TextView
+                 android:id="@+id/tvtimesheet"
+                 android:layout_width="85dp"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@id/bttimesheet"
+                 android:layout_centerHorizontal="true"
+                 android:gravity="center"
+                 android:textStyle="bold"
+                 android:textColor="#212121"
+                 android:text="Time-sheet" />
+
+             <Button
+                 android:id="@+id/btleave"
+                 android:layout_width="80dp"
+                 android:layout_height="80dp"
+                 android:layout_alignParentRight="true"
+                 android:background="#AB47BC"
+                 android:padding="10dp"
+                 android:text="L"
+                 android:textSize="30sp"
+                 android:textColor="#000000" />
+
+             <TextView
+                 android:layout_width="80dp"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@id/btleave"
+                 android:layout_alignParentRight="true"
+                 android:gravity="center"
+                 android:id="@+id/tvleave"
+                 android:textStyle="bold"
+                 android:textColor="#212121"
+                 android:text="Leave" />
+         </RelativeLayout>
+
+         <RelativeLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_below="@+id/items1"
+             android:layout_marginStart="25dp"
+             android:layout_marginLeft="25dp"
+             android:layout_marginTop="10dp"
+             android:layout_marginEnd="25dp"
+             android:layout_marginRight="25dp"
+             android:layout_marginBottom="25dp">
+
+             <Button
+                 android:id="@+id/btfeedback"
+                 android:layout_width="80dp"
+                 android:layout_height="80dp"
+                 android:layout_alignParentLeft="true"
+                 android:background="#7E57C2"
+                 android:textSize="30sp"
+                 android:text="F" />
+
+             <TextView
+                 android:id="@+id/tvfeedback"
+                 android:layout_width="80dp"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@id/btfeedback"
+                 android:layout_alignParentLeft="true"
+                 android:gravity="center"
+                 android:textStyle="bold"
+                 android:textColor="#212121"
+                 android:text="Feedback" />
+
+             <Button
+                 android:id="@+id/btservice"
+                 android:layout_width="80dp"
+                 android:layout_height="80dp"
+                 android:layout_centerHorizontal="true"
+                 android:background="#5C6BC0"
+                 android:padding="10dp"
+                 android:text="S"
+                 android:textSize="30sp"
+                 android:textColor="#000000" />
+
+             <TextView
+                 android:id="@+id/tvservice"
+                 android:layout_width="80dp"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@id/btservice"
+                 android:layout_centerHorizontal="true"
+                 android:gravity="center"
+                 android:textStyle="bold"
+                 android:textColor="#212121"
+                 android:text="Service" />
+
+             <Button
+                 android:id="@+id/btattendance"
+                 android:layout_width="80dp"
+                 android:layout_height="80dp"
+                 android:layout_alignParentRight="true"
+                 android:background="#42A5F5"
+                 android:padding="10dp"
+                 android:text="A"
+                 android:textSize="30sp"
+                 android:textColor="#000000" />
+
+             <TextView
+                 android:id="@+id/tvattendance"
+                 android:layout_width="80dp"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@id/btattendance"
+                 android:layout_alignParentRight="true"
+                 android:textStyle="bold"
+                 android:textColor="#212121"
+                 android:text="Attendance" />
+
+         </RelativeLayout>
+     </RelativeLayout>
+ </ScrollView>
+
+</RelativeLayout>

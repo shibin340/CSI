@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/csi_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/reg_head"
+        android:background="@drawable/registration_heading"
+        android:layout_marginTop="10dp"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/csi_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reg_head"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="50dp"
+        android:src="@drawable/csi_pune_logo" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/csi_logo">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <EditText
+                android:id="@+id/et_firstname"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:paddingLeft="10dp"
+                android:layout_marginBottom="0.5dp"
+                android:background="@drawable/email_bg"
+                android:hint="First name"
+                android:inputType="textPersonName" />
+            <EditText
+                android:id="@+id/et_lastname"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:paddingLeft="10dp"
+                android:layout_marginBottom="0.5dp"
+                android:background="@drawable/email_bg"
+                android:hint="Last name"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/et_email"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Email"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="0.5dp"
+                android:paddingLeft="10dp"
+                android:background="@drawable/email_bg"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Password"
+                android:layout_marginBottom="0.5dp"
+                android:paddingLeft="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/email_bg"
+                android:inputType="textPassword" />
+
+            <EditText
+                android:id="@+id/et_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Confirm Password"
+                android:layout_marginBottom="0.5dp"
+                android:paddingLeft="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/email_bg"
+                android:inputType="textPassword" />
+
+            <TextView
+                android:id="@+id/et_dob"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/email_bg"
+                android:gravity="center|start|left"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="Date-of-birth"
+                android:textColor="#a2a2a2"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/et_contact_no"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:paddingLeft="10dp"
+                android:layout_marginBottom="0.5dp"
+                android:background="@drawable/email_bg"
+                android:hint="Contact number"
+                android:inputType="number" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sign_up_bt"
+                android:background="@drawable/sign_up_bt"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center"
+                />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="18dp"
+                android:id="@+id/RLHaveAccount">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/already_have_an_account_tv"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/already_have_an_account_tv"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/sign_in_tv"
+                    android:layout_toRightOf="@+id/already_have_an_account_tv"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/sign_in_tv"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

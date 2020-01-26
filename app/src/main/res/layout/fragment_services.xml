@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/services"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/BLACK"
+        android:layout_margin="10dp"
+        android:text="@string/services"/>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/services_contents"
+        android:layout_centerInParent="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/items1"
+            android:layout_margin="25dp"
+            android:gravity="center">
+            <Button
+                android:id="@+id/csi_directorybt"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentLeft="true"
+                android:background="#ef5350"
+                android:textSize="30sp"
+                android:text="C" />
+
+            <TextView
+                android:id="@+id/tvdirectory"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/csi_directorybt"
+                android:layout_alignParentLeft="true"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="#212121"
+                android:text="Directory" />
+
+            <Button
+                android:id="@+id/bttimesheet"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerHorizontal="true"
+                android:background="#D81B60"
+                android:padding="10dp"
+                android:text="T"
+                android:textSize="30sp"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/tvtimesheet"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bttimesheet"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="#212121"
+                android:text="Time-sheet" />
+
+            <Button
+                android:id="@+id/btleave"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentRight="true"
+                android:background="#AB47BC"
+                android:padding="10dp"
+                android:text="L"
+                android:textSize="30sp"
+                android:textColor="#000000" />
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btleave"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:id="@+id/tvleave"
+                android:textStyle="bold"
+                android:textColor="#212121"
+                android:text="Leave" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/items2"
+            android:id="@+id/items3"
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="25dp">
+
+            <Button
+                android:id="@+id/btrequest"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentLeft="true"
+                android:background="#00ACC1"
+                android:textSize="30sp"
+                android:text="R" />
+
+            <TextView
+                android:id="@+id/tvrequest"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btrequest"
+                android:layout_alignParentLeft="true"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="#212121"
+                android:text="Request" />
+
+            <Button
+                android:id="@+id/btclaim"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerHorizontal="true"
+                android:background="#00897B"
+                android:padding="10dp"
+                android:text="C"
+                android:textSize="30sp"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/tvclaim"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btclaim"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="#212121"
+                android:text="Claim" />
+
+            <Button
+                android:id="@+id/bthelpdesk"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentRight="true"
+                android:background="#43A047"
+                android:padding="10dp"
+                android:text="H"
+                android:textSize="30sp"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/tvhelpdesk"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bthelpdesk"
+                android:layout_alignParentRight="true"
+                android:textStyle="bold"
+                android:textColor="#212121"
+                android:gravity="center"
+                android:text="Helpdesk" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/items1"
+            android:id="@+id/items2"
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="25dp">
+
+            <Button
+                android:id="@+id/btattendance"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentLeft="true"
+                android:background="#7E57C2"
+                android:textSize="30sp"
+                android:text="A" />
+
+            <TextView
+                android:id="@+id/tvattendance"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btattendance"
+                android:layout_alignParentLeft="true"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="#212121"
+                android:text="Attendance" />
+
+            <Button
+                android:id="@+id/btlaptop"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerHorizontal="true"
+                android:background="#5C6BC0"
+                android:padding="10dp"
+                android:text="L"
+                android:textSize="30sp"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/tvlaptop"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btlaptop"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="#212121"
+                android:text="Laptop" />
+
+            <Button
+                android:id="@+id/btpayment"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentRight="true"
+                android:background="#42A5F5"
+                android:padding="10dp"
+                android:text="P"
+                android:textSize="30sp"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/tvpayment"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btattendance"
+                android:layout_alignParentRight="true"
+                android:textStyle="bold"
+                android:textColor="#212121"
+                android:gravity="center"
+                android:text="Payment" />
+
+        </RelativeLayout>
+</RelativeLayout>
+</RelativeLayout>
