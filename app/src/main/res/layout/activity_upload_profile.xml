@@ -27,7 +27,7 @@
         android:id="@+id/bt_choose"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/img_upload"
+        android:layout_below="@+id/imgname"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
@@ -43,5 +43,13 @@
         android:id="@+id/bt_upload"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/bt_choose"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imgname"
+        android:layout_centerHorizontal="true"
+        android:hint="Enter image name"
+        android:layout_below="@+id/img_upload"/>
 
 </RelativeLayout>

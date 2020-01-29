@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -22,8 +23,8 @@ public class upload_profile extends AppCompatActivity {
     private static final int pick_image_request=100;
     Uri imgpath;
     Bitmap imagetostore;
-    DatabaseHelper db;
-    String mail="ansarisaifulla7@gmail.com";
+    ImageH db;
+    EditText imagename;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +32,8 @@ public class upload_profile extends AppCompatActivity {
         bt_choose=findViewById(R.id.bt_choose);
         bt_upload=findViewById(R.id.bt_upload);
         imag_upload=findViewById(R.id.img_upload);
-        db=new DatabaseHelper(this);
+        imagename=findViewById(R.id.imgname);
+        db=new ImageH(this);
         Intent intent = getIntent();
         final String email = intent.getStringExtra("email");
         bt_choose.setOnClickListener(new View.OnClickListener() {
@@ -47,9 +49,14 @@ public class upload_profile extends AppCompatActivity {
         bt_upload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!mail.isEmpty() && imag_upload.getDrawable()!=null) {
-                    if(db.storeimage(imagetostore,email))
+                if(imag_upload.getDrawable()!=null && !imagename.getText().toString().isEmpty()) {
+                    if(db.storeimage(new model(imagetostore,imagename.getText().toString())))
                         Toast.makeText(getApplicationContext(),"inserted successfully ",Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(),"please select image and give name to it  ",Toast.LENGTH_SHORT).show();
+
                 }
             }
         });

@@ -28,7 +28,6 @@ public class ProfileFragment extends Fragment {
     TextView edit_profile,user_email_tv;
     ImageView image_profile;
     DatabaseHelper db;
-    String mail="shibin340@gmail.com";
     private ProfileViewModel notificationsViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,

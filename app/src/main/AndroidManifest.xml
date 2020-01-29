@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".FullScreenImage"></activity>
         <activity android:name=".AdminAssignTask"></activity>
         <activity android:name=".AdminAddEvent" />
         <activity android:name=".HelpDesk" />
