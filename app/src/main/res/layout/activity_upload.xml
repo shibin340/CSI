@@ -1,34 +1,94 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout
+    tools:context=".Upload"
     android:background="@drawable/csi_login"
-    tools:context=".Upload">
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:layout_margin="10dp"
+                android:text="List os permission seekers"
+                android:id="@+id/admin_permit_heading"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/event_add_bt"
-        android:background="@drawable/add_event_bt_bg"
-        android:padding="10dp"
-        android:text="Add Event"
-        android:layout_centerInParent="true"
-        android:textColor="#000"
-        android:layout_margin="10dp"
-        android:textSize="18sp"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center"
+                android:id="@+id/admin_rcv"
+                android:scrollbars="vertical"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/task_add_bt"
-        android:background="@drawable/add_event_bt_bg"
-        android:padding="10dp"
-        android:layout_centerInParent="true"
-        android:layout_margin="10dp"
-        android:layout_below="@+id/event_add_bt"
-        android:text="Assign task"
-        android:textColor="#000"
-        android:textSize="18sp"/>
+            <Button
+                android:background="@drawable/add_event_bt_bg"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="18sp"
+                android:text="Add Event"
+                android:id="@+id/event_add_bt"
+                android:layout_margin="10dp"
+                android:textColor="#000"
+                android:layout_gravity="center"
+                android:padding="10dp"/>
 
+            <Button
+                android:background="@drawable/add_event_bt_bg"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="18sp"
+                android:text="Assign task"
+                android:id="@+id/task_add_bt"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:textColor="#000"
+                android:padding="10dp"/>
+
+            <Button
+                android:background="@drawable/add_event_bt_bg"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="18sp"
+                android:text="Upload Gallery"
+                android:id="@+id/gal_add_bt"
+                android:layout_margin="10dp"
+                android:textColor="#000"
+                android:layout_gravity="center"
+                android:padding="10dp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/add_event_bt_bg"
+                android:text="Assign DOJ"
+                android:id="@+id/add_doj_bt"
+                android:layout_margin="10dp"
+                android:textColor="#000"
+                android:textSize="18sp"
+                android:layout_gravity="center"
+                android:padding="10dp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/add_event_bt_bg"
+                android:text="Assign Employee ID"
+                android:id="@+id/add_empid_bt"
+                android:layout_margin="10dp"
+                android:textColor="#000"
+                android:textSize="18sp"
+                android:layout_gravity="center"
+                android:padding="10dp"/>
+        </LinearLayout>
+    </ScrollView>
 </RelativeLayout>

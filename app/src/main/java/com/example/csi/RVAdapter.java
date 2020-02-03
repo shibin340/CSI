@@ -42,9 +42,9 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.RVHolder> {
         {
             return;
         }
-        String imgname=cursor.getString(0);
+        String imgname=cursor.getString(cursor.getColumnIndex("imagename"));
         //Bitmap img=cursor.getBlob(1);
-        final byte[] imageBytes=cursor.getBlob(1);
+        final byte[] imageBytes=cursor.getBlob(cursor.getColumnIndex("image"));
         Bitmap bitmap= BitmapFactory.decodeByteArray(imageBytes,0,imageBytes.length);
         holder.imageName.setText(imgname);
         holder.img.setImageBitmap(bitmap);

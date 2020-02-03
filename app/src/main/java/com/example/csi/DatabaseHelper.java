@@ -26,7 +26,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("Create table user(username text,email text primary key,password text,dob text,task text,completed int,image BLOB default null)");
+        db.execSQL("Create table user(username text,email text primary key,Phonenum text,password text,dob text,task text,completed int,image BLOB default null,isAuthorized int,Address text default null,Nationality text default null,UID text default null,PAN text default null,Language text default null,Education text default null,DOJ text default null)");
     }
 
     @Override
@@ -35,7 +35,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     //Insertion
-    public boolean insert(String username,String email,String password,String dob,String task1){
+    public boolean insert(String username,String email,String password,String dob,String task1,String phno){
         SQLiteDatabase db= this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("username",username);
@@ -44,6 +44,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put("password",password);
         contentValues.put("task",task1);
         contentValues.put("completed",0);
+        contentValues.put("isAuthorized",0);
+        contentValues.put("Phonenum",phno);
         long ins = db.insert("user",null,contentValues);
         if(ins==-1)
             return false;
@@ -85,6 +87,54 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return false;
     }
 
+    //check approval
+    public Boolean checkapproval(String email)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("select * from user where email = '"+email+"' and isAuthorized = 1",null);
+        if(cursor.getCount()>0)
+            return true;
+        else
+            return false;
+    }
+    //after tick
+    public Boolean tickk(String email)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("isAuthorized",1);
+        String whereClause = "email=?";
+        String whereArgs[] = {email};
+        long ins;
+        ins=db.update("user", contentValues, whereClause, whereArgs);
+        if(ins==-1)
+        {
+            return false;
+        }
+        else
+            return true;
+
+    }
+
+    //after cross
+    public Boolean crosss(String email)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String table = "user";
+        String whereClause = "email=?";
+        String[] whereArgs = new String[] { email };
+        long ins=db.delete(table, whereClause, whereArgs);
+        if(ins==-1)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+
+        }
+        //db.execSQL("update user set isAuthorized =1 where email=?",new String[]{email});
+    }
     //Retrieve data
     public Cursor allData(){
         SQLiteDatabase db = this.getReadableDatabase();
@@ -141,6 +191,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return false;
     }
+    public Cursor getRequestApproval()
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor=db.rawQuery("select email from user where isAuthorized = 0 ",null);
+
+        return cursor;
+    }
 
     //Searching data
     public Cursor searchData(String data)
@@ -175,5 +233,33 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db=this.getReadableDatabase();
         Cursor cursor=db.rawQuery("select image from user where email ='"+mail+"'",null);
         return cursor;
+    }
+    public Cursor getProfileData(String mail){
+        SQLiteDatabase db=this.getReadableDatabase();
+        Cursor cursor=db.rawQuery("select * from user where email ='"+mail+"'",null);
+        return cursor;
+    }
+    public  boolean update_profile(String new_email,String old_email,String number,String dob,String address,String nation,String uid,String pan,String language,String education){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("email",new_email);
+        contentValues.put("Phonenum",number);
+        contentValues.put("dob",dob);
+        contentValues.put("Address",address);
+        contentValues.put("Nationality",nation);
+        contentValues.put("UID",uid);
+        contentValues.put("PAN",pan);
+        contentValues.put("Language",language);
+        contentValues.put("Education",education);
+        String whereClause = "email=?";
+        String whereArgs[] = {old_email};
+        long ins;
+        ins=db.update("user", contentValues, whereClause, whereArgs);
+        if(ins==-1)
+        {
+            return false;
+        }
+        else
+            return true;
     }
 }

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ApplyLeave">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/leave_heading_tv"
+        android:text="Apply Leave"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/BLACK"
+        android:layout_margin="10dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/leave_heading_tv">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/number_of_days_tv"
+            android:text="Select the number of days for leave:"
+            android:layout_margin="10dp"
+            android:padding="5dp"
+            android:textSize="24sp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/manage_days"
+            android:gravity="center">
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/decrement_days"
+                android:text="-"
+                android:textSize="25sp"
+                android:gravity="center"
+
+                android:layout_margin="5dp"/>
+            <EditText
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_show_days"
+                android:text="1"
+                android:gravity="center"
+                android:layout_margin="5dp"
+                android:inputType="number"
+                android:textSize="25sp"/>
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/increment_days"
+                android:text="+"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:layout_margin="5dp"/>
+        </LinearLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/bt_apply_leave"
+            android:text="Apply for leave"
+            android:layout_margin="20dp"
+            android:background="@drawable/custom_bt"/>
+    </LinearLayout>
+</RelativeLayout>

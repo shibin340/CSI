@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.Calendar;
+import java.util.StringTokenizer;
 
 public class SignUp extends AppCompatActivity {
     DatabaseHelper db;
@@ -55,6 +56,7 @@ public class SignUp extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                StringTokenizer s_arr = new StringTokenizer(ed_dob.getText().toString().trim(),"/",false);
                 if(ed_firstname.getText().toString().trim().equals("")){
                     Toast.makeText(getApplicationContext(), "Enter First name", Toast.LENGTH_SHORT).show();
                 }
@@ -67,7 +69,7 @@ public class SignUp extends AppCompatActivity {
                 else if(ed_password.getText().toString().trim().equals("")){
                     Toast.makeText(getApplicationContext(), "Enter Password", Toast.LENGTH_SHORT).show();
                 }
-                else if(ed_dob.getText().toString().trim().equals(""))
+                else if(s_arr.countTokens()!=3)
                 {
                     Toast.makeText(getApplicationContext(),"Incorrect Dob",Toast.LENGTH_SHORT).show();
                 }
@@ -91,7 +93,7 @@ public class SignUp extends AppCompatActivity {
                         String tasklist[]= res.getStringArray(R.array.tasks);
                         int size=tasklist.length-1;
                         int index=(int)(Math.random() * size) +1;
-                        boolean insert = db.insert((ed_firstname.getText().toString().trim()+" "+ed_lastname.getText().toString().trim()),ed_email.getText().toString(),ed_password.getText().toString(),ed_dob.getText().toString(),tasklist[index]);
+                        boolean insert = db.insert((ed_firstname.getText().toString().trim()+" "+ed_lastname.getText().toString().trim()),ed_email.getText().toString(),ed_password.getText().toString(),ed_dob.getText().toString(),tasklist[index],phone_no.getText().toString().trim());
                         if(insert==true) {
                             Toast.makeText(getApplicationContext(), "Registered successfully!", Toast.LENGTH_SHORT).show();
                             ed_confirm.setText(null);

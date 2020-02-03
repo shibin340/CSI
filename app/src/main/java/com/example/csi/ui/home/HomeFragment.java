@@ -27,7 +27,6 @@ import com.example.csi.TimeSheet;
 public class HomeFragment extends Fragment{
 
     private HomeViewModel homeViewModel;
-    Button ts;
     TextView textViewUser,textViewBday,textViewEvents;
     DatabaseHelper db;
     Notify_Adapter mAdapter;
@@ -43,8 +42,7 @@ public class HomeFragment extends Fragment{
         textViewUser = root.findViewById(R.id.tvuser);
         textViewUser.setText("Welcome, "+msg);
         textViewBday = root.findViewById(R.id.tvbday);
-        textViewEvents = root.findViewById(R.id.tvevents);
-        ts = root.findViewById(R.id.bttimesheet);
+        textViewEvents = root.findViewById(R.id.tv_events);
         final RecyclerView recyclerView=root.findViewById(R.id.rcv2);
         final RecyclerView recyclerView1=root.findViewById(R.id.rcv3);
         Cursor cursor = db.notification();
@@ -79,15 +77,6 @@ public class HomeFragment extends Fragment{
             recyclerView1.addItemDecoration(new DividerItemDecoration(getActivity().getApplicationContext(),
                     DividerItemDecoration.VERTICAL));
         }
-
-        ts.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent1=new Intent(getActivity().getApplicationContext(),TimeSheet.class);
-                intent1.putExtra("username",msg);
-                startActivity(intent1);
-            }
-        });
         return root;
     }
 }

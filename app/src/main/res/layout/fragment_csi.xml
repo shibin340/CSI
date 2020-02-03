@@ -3,9 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.CSIfragment">
 
-    <TextView android:layout_height="wrap_content"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:id="@+id/txt_gal"
         android:textSize="19sp"
@@ -13,7 +22,7 @@
         android:layout_centerHorizontal="true"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_height="wrap_content"
+        android:layout_height="155dp"
         android:layout_width="match_parent"
         android:id="@+id/rcv4"
         android:orientation="horizontal"
@@ -21,4 +30,134 @@
         android:layout_margin="5dp"
         android:scrollbars="horizontal"/>
 
+
+    <androidx.cardview.widget.CardView
+        android:layout_margin="7dp"
+        app:cardCornerRadius="15dp"
+        android:layout_below="@id/rcv4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/card_hiring">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:background="#94C052">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:id="@+id/img_hiring"
+                android:src="@drawable/hiring"
+                android:scaleType="fitXY" />
+            <TextView
+                android:layout_below="@id/img_hiring"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:id="@+id/txt1"
+                android:textColor="#C40302"
+                android:text="1.Java developer"
+                />
+            <TextView
+                android:layout_below="@id/txt1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:id="@+id/txt2"
+                android:textColor="#FCBC03"
+                android:text="2.Web developer"
+                />
+            <TextView
+                android:layout_below="@id/txt2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:id="@+id/txt3"
+                android:textColor="#F57B11"
+
+                android:text="3.Android developer"
+                />
+            <TextView
+                android:layout_below="@id/txt3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:id="@+id/txt4"
+                android:textColor="#34719F"
+                android:text="4.Digital marketing executing"
+                />
+            <TextView
+                android:layout_below="@id/txt4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:id="@+id/txt5"
+                android:textColor="#0299CB"
+                android:text="5.HR Executive"
+                />
+            <TextView
+                android:layout_below="@id/txt5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:id="@+id/txt6"
+                android:textColor="#B391DB"
+                android:text="Employee Referral : hr@creditsystemindia.com"
+                android:layout_marginBottom="7dp"
+                />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_service_text"
+                android:layout_width="match_parent"
+                android:layout_below="@id/card_hiring"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#FCFAF9"
+                app:cardCornerRadius="13dp">
+                    <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/linear_card_bday">
+
+                    <TextView
+                        android:id="@+id/tvbday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="CSI Services"
+                        android:textColor="#E03D87"
+                        android:textSize="19sp" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="7dp"
+                app:cardCornerRadius="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/card_service_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/card_services">
+                <ImageView
+                    android:padding="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    android:id="@+id/img_services"
+                    android:src="@drawable/services1"
+                    android:layout_marginBottom="50dp"
+                    android:scaleType="fitXY"/>
+
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>

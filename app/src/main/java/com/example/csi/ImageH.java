@@ -20,6 +20,7 @@ public class ImageH extends SQLiteOpenHelper {
 
     private ByteArrayOutputStream byteArrayOutputStream;
     private byte[] imageintobytes;
+    public static final int MAX_FILE_SIZE = 100 * 1024;
 
     public ImageH(@Nullable Context context) {
         super(context, "gallery.db", null, 1);
@@ -59,8 +60,7 @@ public class ImageH extends SQLiteOpenHelper {
     public Cursor getAllimage()
     {
         SQLiteDatabase db=this.getReadableDatabase();
-        Cursor cursor=db.rawQuery("Select * from gallery ",null);
+        Cursor cursor=db.rawQuery("Select image,imagename from gallery ",null);
         return cursor;
-
     }
 }

@@ -5,19 +5,14 @@
     android:layout_height="match_parent"
     android:background="@drawable/csi_login"
     tools:context=".UserLogin">
-
-    <TextView
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/admin_tv"
-        android:layout_alignParentRight="true"
-        android:text="Admin Login"
-        android:padding="5dp"
-        android:layout_below="@+id/login_head"
-        android:layout_margin="7dp"
-        android:textStyle="bold"
-        android:textSize="16sp"
-        android:textColor="@color/white"/>
+        android:orientation="vertical">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,15 +20,25 @@
         android:layout_marginTop="10dp"
         android:id="@+id/login_head"
         />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/admin_tv"
+            android:text="Admin Login"
+            android:layout_gravity="end"
+            android:padding="5dp"
+            android:layout_margin="7dp"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/white"/>
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/csi_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/csi_pune_logo"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/admin_tv"
-        android:layout_marginTop="50dp"/>
+        android:layout_gravity="center"
+        android:layout_marginTop="80dp"/>
 
     <EditText
         android:id="@+id/email_et"
@@ -42,8 +47,8 @@
         android:hint="Email"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:layout_above="@id/password_et"
         android:layout_marginBottom="0.5dp"
+        android:layout_marginTop="80dp"
         android:padding="10dp"
         android:background="@drawable/email_bg"
         android:inputType="textEmailAddress"/>
@@ -53,7 +58,6 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="Password"
-        android:layout_above="@id/tv_forgot_password"
         android:layout_marginBottom="0.5dp"
         android:padding="10dp"
         android:layout_marginLeft="15dp"
@@ -66,9 +70,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/tv_forgot_password"
         android:background="@drawable/forgot_password_tv"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@+id/sign_in_bt"
-        android:layout_margin="10dp"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
         />
 
     <Button
@@ -79,14 +82,15 @@
         android:layout_above="@id/RLDontHaveAccount"
         android:layout_marginBottom="10dp"
         android:onClick="Login"
-        android:layout_centerHorizontal="true"/>
+        android:layout_gravity="center"/>
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="20dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
         android:layout_marginBottom="18dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
         android:id="@+id/RLDontHaveAccount">
         <TextView
             android:layout_width="wrap_content"
@@ -102,6 +106,7 @@
             android:layout_toRightOf="@+id/tv_dont_have_an_acc"
             android:background="@drawable/sign_in_tv"
             />
-    </RelativeLayout>
-
+    </LinearLayout>
+    </LinearLayout>
+    </ScrollView>
 </RelativeLayout>

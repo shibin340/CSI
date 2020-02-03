@@ -26,7 +26,6 @@ public class UserLogin extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), LoginAdmin.class);
                 startActivity(intent);
-                //finish();
             }
         });
     }
@@ -39,7 +38,8 @@ public class UserLogin extends AppCompatActivity {
             Toast.makeText(this, "Enter Password", Toast.LENGTH_SHORT).show();
         } else {
             boolean check = db.chkmailpass(ed_email.getText().toString(), ed_password.getText().toString());
-            if (check == true) {
+            boolean check1=db.checkapproval(ed_email.getText().toString());
+            if (check && check1) {
                 Toast.makeText(this, "Logged in.", Toast.LENGTH_SHORT).show();
                 String message = ed_email.getText().toString().trim();
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);

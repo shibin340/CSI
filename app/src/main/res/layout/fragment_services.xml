@@ -109,7 +109,8 @@
                 android:layout_alignParentLeft="true"
                 android:background="#00ACC1"
                 android:textSize="30sp"
-                android:text="R" />
+                android:text="R"
+                />
 
             <TextView
                 android:id="@+id/tvrequest"

@@ -58,7 +58,7 @@ public class EventDatabaseHelper extends SQLiteOpenHelper {
     {
         SQLiteDatabase db = this.getReadableDatabase();
         boolean status = false;
-        Cursor cursor = db.rawQuery("Select date from events where event = '"+title+"' order by date asc " ,null);
+        Cursor cursor = db.rawQuery("Select date from events where event = '"+title+"'" ,null);
         if(cursor.getCount()==0)
         {
             status = true;

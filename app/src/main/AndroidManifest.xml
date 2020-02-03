@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.csi">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,8 +14,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FullScreenImage"></activity>
-        <activity android:name=".AdminAssignTask"></activity>
+        <activity android:name=".AdminAssignEmpID"></activity>
+        <activity android:name=".AdminAssignDOJ" />
+        <activity android:name=".Upload_gallery" />
+        <activity android:name=".ApplyLeave" />
+        <activity android:name=".FullScreenImage" />
+        <activity android:name=".AdminAssignTask" />
         <activity android:name=".AdminAddEvent" />
         <activity android:name=".HelpDesk" />
         <activity android:name=".csiDirectory" />

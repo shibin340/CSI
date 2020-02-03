@@ -1,23 +1,18 @@
 package com.example.csi.ui.services;
 
 import android.content.Intent;
-import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.csi.Data_Adapter;
-import com.example.csi.DatabaseHelper;
+import com.example.csi.ApplyLeave;
 import com.example.csi.HelpDesk;
 import com.example.csi.R;
 import com.example.csi.TimeSheet;
@@ -26,7 +21,7 @@ import com.example.csi.csiDirectory;
 public class ServicesFragment extends Fragment {
 
     private ServicesViewModel dashboardViewModel;
-    Button csi_directorybt,timesheetbt,leavebt,attendancebt,laptopbt,paymentbt,requestbt,claimbt,helpdeskbt;
+    private Button csi_directorybt,timesheetbt,leavebt,attendancebt,laptopbt,paymentbt,requestbt,claimbt,helpdeskbt;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         dashboardViewModel =
@@ -63,6 +58,47 @@ public class ServicesFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity().getApplicationContext(), HelpDesk.class);
                 startActivity(intent);
+            }
+        });
+        leavebt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1=new Intent(getActivity().getApplicationContext(), ApplyLeave.class);
+                intent1.putExtra("username",msg);
+                startActivity(intent1);
+            }
+        });
+        claimbt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_SENDTO);
+                intent.setData(Uri.parse("mailto:"));
+                intent.putExtra(Intent.EXTRA_EMAIL  , new String[] { "ansarisaifulla7@gmail.com" });
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Claim Request");
+                intent.putExtra(Intent.EXTRA_TEXT, "Request of payment claim of RS<<Enter amount here>>.(Also attach the image of your bill)");
+                startActivity(Intent.createChooser(intent, "Email via..."));
+            }
+        });
+        requestbt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_SENDTO);
+                intent.setData(Uri.parse("mailto:"));
+                intent.putExtra(Intent.EXTRA_EMAIL  , new String[] { "ansarisaifulla7@gmail.com" });
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Document Request");
+                intent.putExtra(Intent.EXTRA_TEXT, "<<Specify the documents required>>");
+                startActivity(Intent.createChooser(intent, "Email via..."));
+            }
+        });
+        paymentbt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_SENDTO);
+                intent.setData(Uri.parse("mailto:"));
+                intent.putExtra(Intent.EXTRA_EMAIL  , new String[] { "ansarisaifulla7@gmail.com" });
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Advance Payment Request");
+                intent.putExtra(Intent.EXTRA_TEXT, "Request of advance payment of current month.(Also attach the image of your salary slip)");
+                startActivity(Intent.createChooser(intent, "Email via..."));
             }
         });
         return root;

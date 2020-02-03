@@ -25,23 +25,58 @@ import java.io.ByteArrayInputStream;
 
 public class ProfileFragment extends Fragment {
 
-    TextView edit_profile,user_email_tv;
+    TextView edit_profile,user_email_tv,user_number_tv,user_dob_tv,user_address_tv,user_nation_tv,user_uid_tv,user_pan_tv,user_language_tv,user_education_tv,user_doj_tv;
     ImageView image_profile;
     DatabaseHelper db;
     private ProfileViewModel notificationsViewModel;
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         notificationsViewModel = ViewModelProviders.of(this).get(ProfileViewModel.class);
         View root = inflater.inflate(R.layout.fragment_profile, container, false);
+        final Intent intent = getActivity().getIntent();
+        final String msg = intent.getStringExtra("EXTRA_MESSAGE");
         edit_profile=root.findViewById(R.id.edit_profile);
         image_profile=root.findViewById(R.id.image_profile);
         user_email_tv = root.findViewById(R.id.user_email_tv);
+        user_number_tv = root.findViewById(R.id.user_number_tv);
+        user_address_tv = root.findViewById(R.id.user_address);
+        user_nation_tv = root.findViewById(R.id.user_nationality);
+        user_uid_tv = root.findViewById(R.id.user_uid);
+        user_pan_tv = root.findViewById(R.id.user_pan);
+        user_language_tv = root.findViewById(R.id.user_language);
+        user_doj_tv = root.findViewById(R.id.user_doj);
+        user_dob_tv = root.findViewById(R.id.user_dob);
+        user_education_tv = root.findViewById(R.id.user_education);
         db= new DatabaseHelper(getActivity().getApplicationContext());
-        Cursor mcursor;
-        final Intent intent = getActivity().getIntent();
-        final String msg = intent.getStringExtra("EXTRA_MESSAGE");
+        Cursor mcursor,cursor;
+        cursor = db.getProfileData(msg);
         mcursor=db.getimage(msg);
+        cursor.moveToFirst();
+        String phno = cursor.getString(cursor.getColumnIndex("Phonenum"));
+        user_number_tv.setText(phno);
+        String address= cursor.getString(cursor.getColumnIndex("Address"));
+        String nationality = cursor.getString(cursor.getColumnIndex("Nationality"));
+        String aadhar = cursor.getString(cursor.getColumnIndex("UID"));
+        String pancard = cursor.getString(cursor.getColumnIndex("PAN"));
+        String dob = cursor.getString(cursor.getColumnIndex("dob"));
+        user_dob_tv.setText(dob);
+        String language = cursor.getString(cursor.getColumnIndex("Language"));
+        String education = cursor.getString(cursor.getColumnIndex("Education"));
+        String doj = cursor.getString(cursor.getColumnIndex("DOJ"));
+        if(address != null)
+            user_address_tv.setText(address);
+        if(nationality!=null)
+            user_nation_tv.setText(nationality);
+        if(aadhar!=null)
+            user_uid_tv.setText(aadhar);
+        if(pancard!=null)
+            user_pan_tv.setText(pancard);
+        if(language!=null)
+            user_language_tv.setText(language);
+        if(education!=null)
+            user_education_tv.setText(education);
+        if(doj!=null)
+            user_doj_tv.setText(doj);
         user_email_tv.setText(msg);
         getprofile(mcursor);
         edit_profile.setOnClickListener(new View.OnClickListener() {
@@ -49,13 +84,16 @@ public class ProfileFragment extends Fragment {
             public void onClick(View view) {
                 Intent intent=new Intent(getActivity().getApplicationContext(), upload_profile.class);
                 intent.putExtra("email",msg);
+                intent.putExtra("number",user_number_tv.getText().toString().trim());
+                intent.putExtra("dob",user_dob_tv.getText().toString().trim());
+                intent.putExtra("address",user_address_tv.getText().toString().trim());
+                intent.putExtra("nation",user_nation_tv.getText().toString().trim());
+                intent.putExtra("uid",user_uid_tv.getText().toString().trim());
+                intent.putExtra("pan",user_pan_tv.getText().toString().trim());
+                intent.putExtra("language",user_language_tv.getText().toString().trim());
+                intent.putExtra("education",user_education_tv.getText().toString().trim());
+                intent.putExtra("doj",user_doj_tv.getText().toString().trim());
                 startActivity(intent);
-            }
-        });
-        notificationsViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                //textView.setText(s);
             }
         });
         return root;
