@@ -24,7 +24,7 @@
 
                <com.google.android.material.appbar.AppBarLayout
                     android:layout_width="match_parent"
-                    android:background="#E2186F"
+                    android:background="#E71F86"
                    android:id="@+id/appbar_welcome"
                     android:layout_height="wrap_content">
                 <TextView
@@ -63,11 +63,11 @@
                         android:id="@+id/card_bday"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:cardBackgroundColor="#E2186F"
+                        app:cardBackgroundColor="#E71F86"
                         app:cardCornerRadius="7dp">
                         <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="50dp"
                             android:id="@+id/linear_card_bday">
 
                             <TextView
@@ -77,16 +77,18 @@
                                 android:layout_marginStart="5dp"
                                 android:layout_marginLeft="5dp"
                                 android:layout_marginTop="5dp"
+                                android:layout_centerVertical="true"
                                 android:layout_marginEnd="5dp"
                                 android:layout_marginRight="5dp"
                                 android:layout_marginBottom="5dp"
                                 android:text="Birthday Notifications"
-                                android:textColor="#DBD001"
+                                android:textColor="#E4B005"
                                 android:textSize="19sp" />
 
                             <ImageView
                                 android:layout_width="35dp"
                                 android:layout_height="35dp"
+                                android:layout_centerVertical="true"
                                 android:background="@drawable/bday"
                                 android:layout_alignParentRight="true"
                                 />
@@ -115,11 +117,11 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/rcv2"
                         android:layout_marginTop="10dp"
-                        app:cardBackgroundColor="#E2186F"
+                        app:cardBackgroundColor="#E71F86"
                         app:cardCornerRadius="7dp">
                         <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="50dp"
                             android:id="@+id/linear_card_events">
 
                             <TextView
@@ -131,13 +133,15 @@
                                 android:layout_marginTop="5dp"
                                 android:layout_marginEnd="5dp"
                                 android:layout_marginRight="5dp"
+                                android:layout_centerVertical="true"
                                 android:layout_marginBottom="5dp"
                                 android:text="Upcoming Events"
-                                android:textColor="#DBD001"
+                                android:textColor="#E4B005"
                                 android:textSize="19sp" />
                             <ImageView
                                 android:layout_width="32dp"
                                 android:layout_height="32dp"
+                                android:layout_centerVertical="true"
                                 android:src="@drawable/event_upcoming"
                                 android:layout_alignParentRight="true"
                                 />

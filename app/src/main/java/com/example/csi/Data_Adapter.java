@@ -3,13 +3,20 @@ package com.example.csi;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.io.ByteArrayInputStream;
 
 public class Data_Adapter extends RecyclerView.Adapter<Data_Adapter.Data_view_holder> {
 
@@ -38,8 +45,20 @@ public class Data_Adapter extends RecyclerView.Adapter<Data_Adapter.Data_view_ho
         }
         final String username = mcursor.getString(mcursor.getColumnIndex(User));
         final String email = mcursor.getString(mcursor.getColumnIndex("email"));
-        holder.bt_direc.setText(username);
-        holder.bt_direc.setOnClickListener(new View.OnClickListener() {
+        byte[] imagebyte = mcursor.getBlob(mcursor.getColumnIndex("image"));
+        if(imagebyte!=null)
+        {
+            ByteArrayInputStream inputStream = new ByteArrayInputStream(imagebyte);
+            Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+            holder.img_user.setImageBitmap(bitmap);
+        }
+        else
+        {
+            holder.img_user.setBackgroundResource(R.drawable.ic_person_black_24dp);
+
+        }
+        holder.txt_search_result.setText(username);
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mcontext,UserData.class);
@@ -56,10 +75,16 @@ public class Data_Adapter extends RecyclerView.Adapter<Data_Adapter.Data_view_ho
     }
 
     public class Data_view_holder extends RecyclerView.ViewHolder{
-        public Button bt_direc;
+        //public Button bt_direc;
+        public TextView txt_search_result;
+        public ImageView img_user;
+        public CardView cardView;
         public Data_view_holder(@NonNull View itemView) {
             super(itemView);
-            bt_direc=itemView.findViewById(R.id.bt_direc);
+            txt_search_result=itemView.findViewById(R.id.txt_search_result);
+            img_user=itemView.findViewById(R.id.img_user);
+            cardView=itemView.findViewById(R.id.card_search_result);
+            //bt_direc=itemView.findViewById(R.id.bt_direc);
         }
     }
 }

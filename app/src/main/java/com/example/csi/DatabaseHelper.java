@@ -168,7 +168,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //Retrieve user data
     public Cursor userdata(String email){
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("Select username,email,dob,task from user where email = '" +email+ "' ",null);
+        Cursor cursor = db.rawQuery("Select username,email,dob,Phonenum,image from user where email = '" +email+ "' ",null);
         return cursor;
     }
 
@@ -206,7 +206,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Cursor searchData(String data)
     {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("Select username,email,dob,task from user where username like '%" +data+ "%' OR dob like '%" +data+ "' ",null);
+        Cursor cursor = db.rawQuery("Select username,email,image from user where username like '%" +data+ "%' OR dob like '%" +data+ "' ",null);
         return cursor;
     }
 
