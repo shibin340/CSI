@@ -57,8 +57,8 @@ public class HomeFragment extends Fragment{
             recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
             mAdapter=new Notify_Adapter(getActivity(),cursor);
             recyclerView.setAdapter(mAdapter);
-            recyclerView.addItemDecoration(new DividerItemDecoration(getActivity().getApplicationContext(),
-                    DividerItemDecoration.VERTICAL));
+            //recyclerView.addItemDecoration(new DividerItemDecoration(getActivity().getApplicationContext(),
+                  //  DividerItemDecoration.VERTICAL));
         }
         EventDatabaseHelper edb;
         edb = new EventDatabaseHelper(getActivity());
@@ -74,8 +74,7 @@ public class HomeFragment extends Fragment{
             recyclerView1.setLayoutManager(new LinearLayoutManager(getActivity()));
             mAdapter1=new Events_Adapter(getActivity(),cursor1);
             recyclerView1.setAdapter(mAdapter1);
-            recyclerView1.addItemDecoration(new DividerItemDecoration(getActivity().getApplicationContext(),
-                    DividerItemDecoration.VERTICAL));
+
         }
         return root;
     }

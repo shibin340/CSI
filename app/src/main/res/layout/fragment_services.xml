@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white">
     <TextView
         android:layout_width="wrap_content"
@@ -25,6 +26,11 @@
             android:id="@+id/items1"
             android:layout_margin="25dp"
             android:gravity="center">
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                app:cardCornerRadius="7dp"
+                android:id="@+id/card11"
+                android:layout_height="wrap_content">
             <Button
                 android:id="@+id/csi_directorybt"
                 android:layout_width="80dp"
@@ -33,40 +39,52 @@
                 android:background="#ef5350"
                 android:textSize="30sp"
                 android:text="C" />
+            </androidx.cardview.widget.CardView>
 
             <TextView
                 android:id="@+id/tvdirectory"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/csi_directorybt"
+                android:layout_below="@+id/card11"
                 android:layout_alignParentLeft="true"
                 android:gravity="center"
                 android:textStyle="bold"
                 android:textColor="#212121"
                 android:text="Directory" />
 
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                app:cardCornerRadius="7dp"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/card12"
+                android:layout_height="wrap_content">
             <Button
                 android:id="@+id/bttimesheet"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_centerHorizontal="true"
                 android:background="#D81B60"
                 android:padding="10dp"
                 android:text="T"
                 android:textSize="30sp"
                 android:textColor="#000000" />
-
+            </androidx.cardview.widget.CardView>
             <TextView
                 android:id="@+id/tvtimesheet"
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/bttimesheet"
+                android:layout_below="@id/card12"
                 android:layout_centerHorizontal="true"
                 android:gravity="center"
                 android:textStyle="bold"
                 android:textColor="#212121"
                 android:text="Time-sheet" />
 
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                app:cardCornerRadius="7dp"
+                android:id="@+id/card13"
+                android:layout_alignParentRight="true"
+                android:layout_height="wrap_content">
             <Button
                 android:id="@+id/btleave"
                 android:layout_width="80dp"
@@ -77,17 +95,113 @@
                 android:text="L"
                 android:textSize="30sp"
                 android:textColor="#000000" />
-
+            </androidx.cardview.widget.CardView>
             <TextView
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/btleave"
+                android:layout_below="@id/card13"
                 android:layout_alignParentRight="true"
                 android:gravity="center"
                 android:id="@+id/tvleave"
                 android:textStyle="bold"
                 android:textColor="#212121"
                 android:text="Leave" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/items1"
+            android:id="@+id/items2"
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="25dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                app:cardCornerRadius="7dp"
+                android:id="@+id/card21"
+                android:layout_alignParentLeft="true"
+                android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/btattendance"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentLeft="true"
+                android:background="#7E57C2"
+                android:textSize="30sp"
+                android:text="A" />
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/tvattendance"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/card21"
+                android:layout_alignParentLeft="true"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="#212121"
+                android:text="Attendance" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                app:cardCornerRadius="7dp"
+                android:id="@+id/card22"
+                android:layout_centerHorizontal="true"
+                android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/btlaptop"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerHorizontal="true"
+                android:background="#5C6BC0"
+                android:padding="10dp"
+                android:text="L"
+                android:textSize="30sp"
+                android:textColor="#000000" />
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/tvlaptop"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/card22"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="#212121"
+                android:text="Laptop" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                app:cardCornerRadius="7dp"
+                android:id="@+id/card23"
+                android:layout_alignParentRight="true"
+                android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/btpayment"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentRight="true"
+                android:background="#42A5F5"
+                android:padding="10dp"
+                android:text="P"
+                android:textSize="30sp"
+                android:textColor="#000000" />
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/tvpayment"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/card23"
+                android:layout_alignParentRight="true"
+                android:textStyle="bold"
+                android:textColor="#212121"
+                android:gravity="center"
+                android:text="Payment" />
+
         </RelativeLayout>
 
         <RelativeLayout
@@ -102,6 +216,12 @@
             android:layout_marginRight="25dp"
             android:layout_marginBottom="25dp">
 
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                app:cardCornerRadius="7dp"
+                android:id="@+id/card31"
+                android:layout_alignParentLeft="true"
+                android:layout_height="wrap_content">
             <Button
                 android:id="@+id/btrequest"
                 android:layout_width="80dp"
@@ -111,18 +231,24 @@
                 android:textSize="30sp"
                 android:text="R"
                 />
-
+            </androidx.cardview.widget.CardView>
             <TextView
                 android:id="@+id/tvrequest"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/btrequest"
+                android:layout_below="@id/card31"
                 android:layout_alignParentLeft="true"
                 android:gravity="center"
                 android:textStyle="bold"
                 android:textColor="#212121"
                 android:text="Request" />
 
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                app:cardCornerRadius="7dp"
+                android:id="@+id/card32"
+                android:layout_centerHorizontal="true"
+                android:layout_height="wrap_content">
             <Button
                 android:id="@+id/btclaim"
                 android:layout_width="80dp"
@@ -134,17 +260,24 @@
                 android:textSize="30sp"
                 android:textColor="#000000" />
 
+            </androidx.cardview.widget.CardView>
             <TextView
                 android:id="@+id/tvclaim"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/btclaim"
+                android:layout_below="@id/card32"
                 android:layout_centerHorizontal="true"
                 android:gravity="center"
                 android:textStyle="bold"
                 android:textColor="#212121"
                 android:text="Claim" />
 
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                app:cardCornerRadius="7dp"
+                android:id="@+id/card33"
+                android:layout_alignParentRight="true"
+                android:layout_height="wrap_content">
             <Button
                 android:id="@+id/bthelpdesk"
                 android:layout_width="80dp"
@@ -156,11 +289,12 @@
                 android:textSize="30sp"
                 android:textColor="#000000" />
 
+            </androidx.cardview.widget.CardView>
             <TextView
                 android:id="@+id/tvhelpdesk"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/bthelpdesk"
+                android:layout_below="@id/card33"
                 android:layout_alignParentRight="true"
                 android:textStyle="bold"
                 android:textColor="#212121"
@@ -169,82 +303,5 @@
 
         </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/items1"
-            android:id="@+id/items2"
-            android:layout_marginStart="25dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="25dp"
-            android:layout_marginRight="25dp"
-            android:layout_marginBottom="25dp">
-
-            <Button
-                android:id="@+id/btattendance"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_alignParentLeft="true"
-                android:background="#7E57C2"
-                android:textSize="30sp"
-                android:text="A" />
-
-            <TextView
-                android:id="@+id/tvattendance"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/btattendance"
-                android:layout_alignParentLeft="true"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:textColor="#212121"
-                android:text="Attendance" />
-
-            <Button
-                android:id="@+id/btlaptop"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_centerHorizontal="true"
-                android:background="#5C6BC0"
-                android:padding="10dp"
-                android:text="L"
-                android:textSize="30sp"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/tvlaptop"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/btlaptop"
-                android:layout_centerHorizontal="true"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:textColor="#212121"
-                android:text="Laptop" />
-
-            <Button
-                android:id="@+id/btpayment"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_alignParentRight="true"
-                android:background="#42A5F5"
-                android:padding="10dp"
-                android:text="P"
-                android:textSize="30sp"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/tvpayment"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/btattendance"
-                android:layout_alignParentRight="true"
-                android:textStyle="bold"
-                android:textColor="#212121"
-                android:gravity="center"
-                android:text="Payment" />
-
-        </RelativeLayout>
-</RelativeLayout>
+    </RelativeLayout>
 </RelativeLayout>

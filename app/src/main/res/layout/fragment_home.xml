@@ -15,13 +15,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <androidx.cardview.widget.CardView
+            <!--androidx.cardview.widget.CardView
                 android:layout_margin="5dp"
-                app:cardCornerRadius="12dp"
+                app:cardCornerRadius="4dp"
                 android:layout_width="match_parent"
                 android:id="@+id/card_welcome"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"-->
 
+               <com.google.android.material.appbar.AppBarLayout
+                    android:layout_width="match_parent"
+                    android:background="#E2186F"
+                   android:id="@+id/appbar_welcome"
+                    android:layout_height="wrap_content">
                 <TextView
                     android:id="@+id/tvuser"
                     android:layout_width="match_parent"
@@ -34,10 +39,11 @@
                     android:layout_marginBottom="10dp"
                     android:padding="1dp"
                     android:text="welcome user"
-                    android:textColor="#F3247E"
+                    android:textColor="#000"
                     android:textSize="24sp"
-                    android:textStyle="bold" />
-            </androidx.cardview.widget.CardView>
+                     />
+               </com.google.android.material.appbar.AppBarLayout>
+            <!--/androidx.cardview.widget.CardView-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -45,7 +51,7 @@
                 android:layout_margin="10dp"
                 android:weightSum="2"
                 android:orientation="vertical"
-                android:layout_below="@+id/card_welcome">
+                android:layout_below="@+id/appbar_welcome">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -58,7 +64,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:cardBackgroundColor="#E2186F"
-                        app:cardCornerRadius="13dp">
+                        app:cardCornerRadius="7dp">
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -72,19 +78,18 @@
                                 android:layout_marginLeft="5dp"
                                 android:layout_marginTop="5dp"
                                 android:layout_marginEnd="5dp"
-                                android:layout_centerHorizontal="true"
                                 android:layout_marginRight="5dp"
                                 android:layout_marginBottom="5dp"
                                 android:text="Birthday Notifications"
-                                android:textColor="#77E01F"
+                                android:textColor="#DBD001"
                                 android:textSize="19sp" />
 
                             <ImageView
                                 android:layout_width="35dp"
                                 android:layout_height="35dp"
                                 android:background="@drawable/bday"
-                                android:layout_marginLeft="4dp"
-                                android:layout_toRightOf="@id/tvbday" />
+                                android:layout_alignParentRight="true"
+                                />
 
                         </RelativeLayout>
                     </androidx.cardview.widget.CardView>
@@ -111,7 +116,7 @@
                         android:layout_below="@id/rcv2"
                         android:layout_marginTop="10dp"
                         app:cardBackgroundColor="#E2186F"
-                        app:cardCornerRadius="13dp">
+                        app:cardCornerRadius="7dp">
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -125,18 +130,17 @@
                                 android:layout_marginLeft="5dp"
                                 android:layout_marginTop="5dp"
                                 android:layout_marginEnd="5dp"
-                                android:layout_centerHorizontal="true"
                                 android:layout_marginRight="5dp"
                                 android:layout_marginBottom="5dp"
                                 android:text="Upcoming Events"
-                                android:textColor="#77E01F"
+                                android:textColor="#DBD001"
                                 android:textSize="19sp" />
                             <ImageView
-                                android:layout_width="35dp"
-                                android:layout_height="35dp"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
                                 android:src="@drawable/event_upcoming"
-                                android:layout_marginLeft="4dp"
-                                android:layout_toRightOf="@id/tv_events" />
+                                android:layout_alignParentRight="true"
+                                />
 
                         </RelativeLayout>
                     </androidx.cardview.widget.CardView>
