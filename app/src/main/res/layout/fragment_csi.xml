@@ -13,28 +13,65 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-    <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:id="@+id/txt_gal"
-        android:textSize="19sp"
-        android:text="Gallery"
-        android:layout_centerHorizontal="true"/>
+             <androidx.cardview.widget.CardView
+                android:id="@+id/card_gal_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                 app:cardBackgroundColor="#E22677"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="13dp">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_height="155dp"
-        android:layout_width="match_parent"
-        android:id="@+id/rcv4"
-        android:orientation="horizontal"
-        android:layout_below="@id/txt_gal"
-        android:layout_margin="5dp"
-        android:scrollbars="horizontal"/>
+                <TextView
+                    android:id="@+id/txt_gal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="Gallery"
+                    android:textColor="#6ACC17"
+                    android:textSize="21sp" />
+              </androidx.cardview.widget.CardView>
 
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/card_gal_text"
+                android:layout_margin="7dp"
+                app:cardCornerRadius="10dp">
+
+                <com.smarteist.autoimageslider.SliderView
+
+                    android:id="@+id/imageSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="275dp"
+                    app:sliderAnimationDuration="600"
+                    app:sliderAutoCycleDirection="back_and_forth"
+                    app:sliderAutoCycleEnabled="true"
+                    app:sliderCircularHandlerEnabled="true"
+                    app:sliderIndicatorAnimationDuration="600"
+                    app:sliderIndicatorGravity="center_horizontal|bottom"
+                    app:sliderIndicatorMargin="15dp"
+                    app:sliderIndicatorOrientation="horizontal"
+                    app:sliderIndicatorPadding="3dp"
+                    app:sliderIndicatorRadius="2dp"
+                    app:sliderIndicatorSelectedColor="#5A5A5A"
+                    app:sliderIndicatorUnselectedColor="#FFF"
+                    app:sliderScrollTimeInSec="3"
+                    app:sliderStartAutoCycle="true" />
+
+            </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:layout_margin="7dp"
         app:cardCornerRadius="15dp"
-        android:layout_below="@id/rcv4"
+        android:layout_below="@id/card_scroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/card_hiring">
@@ -110,17 +147,14 @@
     </androidx.cardview.widget.CardView>
 
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card_service_text"
-                android:layout_width="match_parent"
-                android:layout_below="@id/card_hiring"
-                android:layout_height="wrap_content"
-                app:cardBackgroundColor="#FCFAF9"
-                app:cardCornerRadius="13dp">
-                    <RelativeLayout
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_service_text"
                     android:layout_width="match_parent"
+                    android:layout_below="@id/card_hiring"
                     android:layout_height="wrap_content"
-                    android:id="@+id/linear_card_bday">
+                    app:cardBackgroundColor="#E2186F"
+                    android:layout_margin="10dp"
+                    app:cardCornerRadius="13dp">
 
                     <TextView
                         android:id="@+id/tvbday"
@@ -128,17 +162,16 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:layout_marginLeft="5dp"
+                        android:layout_gravity="center"
                         android:layout_marginTop="5dp"
                         android:layout_marginEnd="5dp"
                         android:layout_centerHorizontal="true"
                         android:layout_marginRight="5dp"
                         android:layout_marginBottom="5dp"
                         android:text="CSI Services"
-                        android:textColor="#E03D87"
-                        android:textSize="19sp" />
-
-                </RelativeLayout>
-            </androidx.cardview.widget.CardView>
+                        android:textColor="#6ACC17"
+                        android:textSize="21sp" />
+                 </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:layout_margin="7dp"

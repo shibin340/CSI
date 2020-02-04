@@ -40,12 +40,37 @@
         android:id="@+id/tsk_detail"
         />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:background="@drawable/email_bg"
+        android:layout_height="wrap_content"
+        android:id="@+id/task_start_date"
+        android:textColor="#a2a2a2"
+        android:textSize="18sp"
+        android:paddingLeft="10dp"
+        android:layout_margin="10dp"
+        android:gravity="center|start"
+        android:text="start-date"
+        android:layout_below="@id/tsk_detail"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:textColor="#a2a2a2"
+        android:textSize="18sp"
+        android:gravity="center|start"
+        android:layout_height="wrap_content"
+        android:text="end-date"
+        android:paddingLeft="10dp"
+        android:background="@drawable/email_bg"
+        android:id="@+id/task_end_date"
+        android:layout_below="@id/task_start_date"/>
+
     <Button
         android:id="@+id/task_bt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_below="@+id/tsk_detail"
+        android:layout_below="@+id/task_end_date"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"

@@ -60,12 +60,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     //Add the Task
-    public boolean assignTask(String email,String Task)
+    public boolean assignTask(String email,String Task,String enddate)
     {
+        String task=Task+"\nEnd-date:"+enddate;
         SQLiteDatabase db=this.getWritableDatabase();
-        db.execSQL("update user set completed = 0, task = ? where email=?",new String[]{Task,email});
+        db.execSQL("update user set completed = 0, task = ? where email=?",new String[]{task,email});
         return true;
     }
+
 
     //Check if email exists
     public boolean checkmail(String email){
