@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RelativeLayout
     tools:context=".Upload"
-    android:background="@drawable/csi_login"
+    android:background="@drawable/login_bg"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
@@ -18,8 +18,9 @@
                 android:layout_width="wrap_content"
                 android:layout_gravity="center"
                 android:textSize="20sp"
-                android:layout_margin="10dp"
-                android:text="List os permission seekers"
+                android:textColor="#000"
+                android:layout_margin="12dp"
+                android:text="List of permission seekers"
                 android:id="@+id/admin_permit_heading"/>
 
             <androidx.recyclerview.widget.RecyclerView
@@ -38,7 +39,19 @@
                 android:text="Add Event"
                 android:id="@+id/event_add_bt"
                 android:layout_margin="10dp"
-                android:textColor="#000"
+                android:textColor="#fff"
+                android:layout_gravity="center"
+                android:padding="10dp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/add_event_bt_bg"
+                android:text="Assign DOJ"
+                android:id="@+id/add_doj_bt"
+                android:layout_margin="10dp"
+                android:textColor="#fff"
+                android:textSize="18sp"
                 android:layout_gravity="center"
                 android:padding="10dp"/>
 
@@ -51,7 +64,7 @@
                 android:id="@+id/task_add_bt"
                 android:layout_margin="10dp"
                 android:layout_gravity="center"
-                android:textColor="#000"
+                android:textColor="#fff"
                 android:padding="10dp"/>
 
             <Button
@@ -62,19 +75,7 @@
                 android:text="Upload Gallery"
                 android:id="@+id/gal_add_bt"
                 android:layout_margin="10dp"
-                android:textColor="#000"
-                android:layout_gravity="center"
-                android:padding="10dp"/>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/add_event_bt_bg"
-                android:text="Assign DOJ"
-                android:id="@+id/add_doj_bt"
-                android:layout_margin="10dp"
-                android:textColor="#000"
-                android:textSize="18sp"
+                android:textColor="#fff"
                 android:layout_gravity="center"
                 android:padding="10dp"/>
 
@@ -85,7 +86,7 @@
                 android:text="Assign Employee ID"
                 android:id="@+id/add_empid_bt"
                 android:layout_margin="10dp"
-                android:textColor="#000"
+                android:textColor="#fff"
                 android:textSize="18sp"
                 android:layout_gravity="center"
                 android:padding="10dp"/>

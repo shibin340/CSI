@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/RLTimesheet"
     android:background="#efefef"
-    tools:context=".TimeSheet"
-    >
+    tools:context=".TimeSheet">
     <ScrollView
     android:layout_width="wrap_content"
     android:layout_height="match_parent">
@@ -33,34 +33,55 @@
                 android:hint="Paste file drive link here"
                 android:padding="5dp" />
 
-            <Button
-                android:id="@+id/t_bt1"
-                android:layout_width="match_parent"
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/t_edittxt"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/t_edittxt"
-                android:layout_centerHorizontal="true"
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="25dp"
-                android:background="@drawable/custom_bt"
-                android:text="Submit"
-                android:textColor="#000"
-                android:textSize="20sp" />
-
-            <Button
-                android:id="@+id/t_bt2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/t_bt1"
+                android:id="@+id/card_timesheet_submit"
+                android:layout_marginBottom="50dp"
                 android:layout_centerHorizontal="true"
+                app:cardCornerRadius="10dp"
+                >
+            <Button
+                android:id="@+id/t_bt1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/t_edittxt"
+                android:layout_centerHorizontal="true"
+                android:padding="10dp"
+                android:background="#FC5B28"
+                android:text="Submit"
+                android:textColor="#FAF8F9"
+                android:shadowRadius="10"
+                android:textSize="18sp" />
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/card_timesheet_submit"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginRight="25dp"
                 android:layout_marginBottom="50dp"
-                android:background="@drawable/custom_bt"
+                android:layout_centerHorizontal="true"
+                app:cardCornerRadius="10dp"
+                >
+            <Button
+                android:id="@+id/t_bt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FC5B28"
+                android:padding="10dp"
+                android:layout_gravity="center"
                 android:text="Show all Tasks"
                 android:textColor="#000"
                 android:textSize="20sp" />
+            </androidx.cardview.widget.CardView>
 
             <TextView
                 android:id="@+id/t_txt_heading"

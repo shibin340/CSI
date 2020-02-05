@@ -10,7 +10,7 @@
         android:layout_height="wrap_content">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_service"
@@ -23,7 +23,7 @@
                 android:layout_marginRight="5dp"
                 android:layout_marginBottom="5dp"
                 android:padding="10dp"
-                app:cardBackgroundColor="#FF69B4"
+                app:cardBackgroundColor="#FC5B28"
                 app:cardCornerRadius="7dp">
 
                 <LinearLayout
@@ -39,7 +39,7 @@
                         android:gravity="center"
                         android:text="@string/services"
                         android:textColor="@color/BLACK"
-                        android:textSize="30sp"
+                        android:textSize="26sp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -52,25 +52,31 @@
                 android:layout_centerInParent="true"
                 android:layout_marginStart="5dp"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="80dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_marginBottom="5dp"
                 android:padding="10dp"
                 app:cardBackgroundColor="#F5F5F5"
-                app:cardCornerRadius="27dp">
+                app:cardCornerRadius="12dp">
 
                 <RelativeLayout
                     android:id="@+id/services_contents"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/login_bg"
                     android:layout_centerInParent="true">
 
                     <RelativeLayout
                         android:id="@+id/items1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="25dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="45dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="20dp"
                         android:gravity="center">
 
                         <androidx.cardview.widget.CardView
@@ -166,12 +172,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/items1"
-                        android:layout_marginStart="25dp"
-                        android:layout_marginLeft="25dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
                         android:layout_marginTop="10dp"
-                        android:layout_marginEnd="25dp"
-                        android:layout_marginRight="25dp"
-                        android:layout_marginBottom="25dp">
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="20dp">
 
                         <androidx.cardview.widget.CardView
                             android:id="@+id/card21"
@@ -268,12 +274,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/items2"
-                        android:layout_marginStart="25dp"
-                        android:layout_marginLeft="25dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
                         android:layout_marginTop="10dp"
-                        android:layout_marginEnd="25dp"
-                        android:layout_marginRight="25dp"
-                        android:layout_marginBottom="25dp">
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="30dp">
 
                         <androidx.cardview.widget.CardView
                             android:id="@+id/card31"

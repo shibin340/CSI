@@ -24,7 +24,7 @@
 
                <com.google.android.material.appbar.AppBarLayout
                     android:layout_width="match_parent"
-                    android:background="#FD54A1"
+                    android:background="#FC5B28"
                     android:id="@+id/appbar_welcome"
                     android:layout_height="wrap_content">
                 <TextView
@@ -62,7 +62,7 @@
                         android:id="@+id/card_bday"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:cardBackgroundColor="#E71F86"
+                        app:cardBackgroundColor="#FE976C"
                         app:cardCornerRadius="7dp">
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -81,7 +81,7 @@
                                 android:layout_marginRight="5dp"
                                 android:layout_marginBottom="5dp"
                                 android:text="Birthday Notifications"
-                                android:textColor="#E4B005"
+                                android:textColor="#F50057"
                                 android:textSize="19sp" />
 
                             <ImageView
@@ -116,7 +116,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/rcv2"
                         android:layout_marginTop="10dp"
-                        app:cardBackgroundColor="#E71F86"
+                        app:cardBackgroundColor="#FE976C"
                         app:cardCornerRadius="7dp">
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -135,7 +135,7 @@
                                 android:layout_centerVertical="true"
                                 android:layout_marginBottom="5dp"
                                 android:text="Upcoming Events"
-                                android:textColor="#E4B005"
+                                android:textColor="#F50057"
                                 android:textSize="19sp" />
                             <ImageView
                                 android:layout_width="32dp"

@@ -18,7 +18,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
-                    android:background="#424242"
+                    android:background="@drawable/login_bg"
                     android:orientation="vertical">
                     <TextView
                         android:id="@+id/edit_profile"
@@ -28,8 +28,8 @@
                         android:layout_margin="10dp"
                         android:gravity="right"
                         android:text="Edit"
-                        android:textColor="#FFFFFF"
-                        android:textSize="16sp" />
+                        android:textColor="#000"
+                        android:textSize="17sp" />
 
                     <com.mikhaellopez.circularimageview.CircularImageView
                         android:id="@+id/image_profile"
@@ -38,24 +38,18 @@
                         android:layout_gravity="center"
                         android:src="@drawable/ic_person_black_24dp"
                         app:civ_border_color="@color/colorPrimaryDark"
-                        app:civ_border_width="4dp"
+                        app:civ_border_width="2dp"
                         app:civ_shadow="true"
-                        app:civ_shadow_radius="10"
                         app:civ_shadow_color="@color/colorPrimaryDark"
                         />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="username"
-                        android:layout_gravity="center"
-                        android:textSize="22sp" />
                 </LinearLayout>
 
                 <androidx.cardview.widget.CardView
                     android:layout_marginTop="250dp"
                     android:layout_width="300dp"
                     android:layout_height="100dp"
+                    app:cardCornerRadius="10dp"
                     android:layout_centerHorizontal="true">
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -89,7 +83,7 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/work_profile" />
+                                android:src="@drawable/task_assign" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -105,14 +99,34 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:orientation="vertical">
+
                 <LinearLayout
-                    android:layout_margin="15dp"
+                    android:layout_margin="12dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_person_black_24dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="username"
+                        android:id="@+id/user_name_tv"
+                        android:layout_marginLeft="15dp"
+                        android:textSize="18sp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_margin="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:src="@drawable/email_profile"/>
                     <TextView
                         android:layout_width="wrap_content"
@@ -120,10 +134,10 @@
                         android:text="user@gmail.com"
                         android:id="@+id/user_email_tv"
                         android:layout_marginLeft="15dp"
-                        android:textSize="20sp"/>
+                        android:textSize="18sp"/>
                 </LinearLayout>
                 <LinearLayout
-                    android:layout_margin="15dp"
+                    android:layout_margin="12dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
@@ -137,10 +151,10 @@
                         android:layout_marginLeft="15dp"
                         android:id="@+id/user_number_tv"
                         android:text="+91xxxxxxxxxx"
-                        android:textSize="20sp" />
+                        android:textSize="18sp" />
                 </LinearLayout>
                 <LinearLayout
-                    android:layout_margin="15dp"
+                    android:layout_margin="12dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
@@ -154,126 +168,126 @@
                         android:text="20/01/2000"
                         android:id="@+id/user_dob"
                         android:layout_marginLeft="15dp"
-                        android:textSize="20sp"/>
+                        android:textSize="18sp"/>
                 </LinearLayout>
                 <LinearLayout
-                    android:layout_margin="15dp"
+                    android:layout_margin="12dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/dob_profile"/>
+                        android:src="@drawable/address"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="--Address--"
                         android:id="@+id/user_address"
                         android:layout_marginLeft="15dp"
-                        android:textSize="20sp"/>
+                        android:textSize="18sp"/>
                 </LinearLayout>
                 <LinearLayout
-                    android:layout_margin="15dp"
+                    android:layout_margin="12dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
-                    <ImageView
+                    <!--ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/dob_profile"/>
+                        android:src="@drawable/dob_profile"/-->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="--Nationality--"
                         android:id="@+id/user_nationality"
                         android:layout_marginLeft="15dp"
-                        android:textSize="20sp"/>
+                        android:textSize="18sp"/>
                 </LinearLayout>
                 <LinearLayout
-                    android:layout_margin="15dp"
+                    android:layout_margin="12dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
-                    <ImageView
+                    <!--ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/dob_profile"/>
+                        android:src="@drawable/dob_profile"/-->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="--Aadhar number--"
                         android:id="@+id/user_uid"
                         android:layout_marginLeft="15dp"
-                        android:textSize="20sp"/>
+                        android:textSize="18sp"/>
                 </LinearLayout>
                 <LinearLayout
-                    android:layout_margin="15dp"
+                    android:layout_margin="12dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
-                    <ImageView
+                    <!--ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/dob_profile"/>
+                        android:src="@drawable/dob_profile"/-->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="--PAN Card number--"
                         android:id="@+id/user_pan"
                         android:layout_marginLeft="15dp"
-                        android:textSize="20sp"/>
+                        android:textSize="18sp"/>
                 </LinearLayout>
                 <LinearLayout
-                    android:layout_margin="15dp"
+                    android:layout_margin="12dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
-                    <ImageView
+                    <!--ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/dob_profile"/>
+                        android:src="@drawable/dob_profile"/-->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="--Language--"
                         android:id="@+id/user_language"
                         android:layout_marginLeft="15dp"
-                        android:textSize="20sp"/>
+                        android:textSize="18sp"/>
                 </LinearLayout>
                 <LinearLayout
-                    android:layout_margin="15dp"
+                    android:layout_margin="12dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
-                    <ImageView
+                    <!--ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/dob_profile"/>
+                        android:src="@drawable/dob_profile"/-->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="--Education--"
                         android:id="@+id/user_education"
                         android:layout_marginLeft="15dp"
-                        android:textSize="20sp"/>
+                        android:textSize="18sp"/>
                 </LinearLayout>
                 <LinearLayout
-                    android:layout_margin="15dp"
+                    android:layout_margin="12dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
-                    <ImageView
+                    <!--ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/dob_profile"/>
+                        android:src="@drawable/dob_profile"/-->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="--Date of Joining--"
                         android:id="@+id/user_doj"
                         android:layout_marginLeft="15dp"
-                        android:textSize="20sp"/>
+                        android:textSize="18sp"/>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

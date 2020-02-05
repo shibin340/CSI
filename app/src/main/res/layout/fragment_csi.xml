@@ -17,7 +17,7 @@
                 android:id="@+id/card_gal_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                 app:cardBackgroundColor="#FF69B4"
+                 app:cardBackgroundColor="#FC5B28"
                 android:layout_margin="10dp"
                 app:cardCornerRadius="7dp">
 
@@ -33,9 +33,8 @@
                     android:layout_marginRight="5dp"
                     android:layout_marginBottom="5dp"
                     android:text="Gallery"
-                    android:textColor="@color/BLACK"
-                    android:textStyle="bold"
-                    android:textSize="30sp" />
+                    android:textColor="#E4D960"
+                    android:textSize="26sp" />
 
               </androidx.cardview.widget.CardView>
 
@@ -159,7 +158,7 @@
                     android:layout_width="match_parent"
                     android:layout_below="@id/card_hiring"
                     android:layout_height="wrap_content"
-                    app:cardBackgroundColor="#FF69B4"
+                    app:cardBackgroundColor="#FC5B28"
                     android:layout_margin="10dp"
                     app:cardCornerRadius="7dp">
 
@@ -175,9 +174,8 @@
                         android:layout_marginRight="5dp"
                         android:layout_marginBottom="5dp"
                         android:text="CSI Services"
-                        android:textColor="@color/BLACK"
-                        android:textStyle="bold"
-                        android:textSize="30sp" />
+                        android:textColor="#E4D960"
+                        android:textSize="26sp"  />
                  </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
