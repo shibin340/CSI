@@ -12,7 +12,7 @@ import android.widget.Toast;
 public class UserLogin extends AppCompatActivity {
     EditText ed_email, ed_password;
     DatabaseHelper db;
-    TextView admin_tv;
+    TextView admin_tv,forgot_passowrd_tv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,11 +21,18 @@ public class UserLogin extends AppCompatActivity {
         ed_email = findViewById(R.id.email_et);
         ed_password = findViewById(R.id.password_et);
         admin_tv = findViewById(R.id.admin_tv);
+        forgot_passowrd_tv=findViewById(R.id.tv_forgot_password);
         admin_tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), LoginAdmin.class);
                 startActivity(intent);
+            }
+        });
+        forgot_passowrd_tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), ForgotPassword.class));
             }
         });
     }

@@ -26,7 +26,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("Create table user(username text,email text primary key,Phonenum text,EmpID text default null,password text,dob text,task text,completed int,image BLOB default null,isAuthorized int,Address text default null,Nationality text default null,UID text default null,PAN text default null,Language text default null,Education text default null,DOJ text default null)");
+        db.execSQL("Create table user(username text,email text primary key,Phonenum text,EmpID text default null,password text,dob text,task text,completed int,image BLOB default null,isAuthorized int,Address text default null,Nationality text default null,UID text default null,PAN text default null,Language text default null,Education text default null,DOJ text default null,LaptopID text default null,Laptop_issue_date text default null)");
     }
 
     @Override
@@ -168,7 +168,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //Retrieve user data
     public Cursor userdata(String email){
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("Select username,email,dob,Phonenum,image from user where email = '" +email+ "' ",null);
+        Cursor cursor = db.rawQuery("Select username,email,dob,Phonenum,image,EmpID from user where email = '" +email+ "' ",null);
         return cursor;
     }
 
@@ -204,7 +204,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Cursor searchData(String data)
     {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("Select username,email,image from user where username like '%" +data+ "%' OR dob like '%" +data+ "' ",null);
+        Cursor cursor = db.rawQuery("Select username,email,image from user where username like '%" +data+ "%' OR EmpID like '%" +data+ "' ",null);
         return cursor;
     }
 
@@ -273,5 +273,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db=this.getWritableDatabase();
         db.execSQL("update user set EmpID =? where email=?",new String[]{empid,email});
         return true;
+    }
+
+    public boolean addLaptop(String email, String laptopid,String issue_date) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("LaptopID",laptopid);
+        contentValues.put("Laptop_issue_date",issue_date);
+        String whereClause = "email=?";
+        String whereArgs[] = {email};
+        long ins;
+        ins=db.update("user", contentValues, whereClause, whereArgs);
+        if(ins==-1)
+        {
+            return false;
+        }
+        else
+            return true;
+    }
+
+    public Cursor getLaptopData(String data)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("Select EmpID,email,LaptopID,Laptop_issue_date from user where email = '" +data+ "'",null);
+        return cursor;
     }
 }

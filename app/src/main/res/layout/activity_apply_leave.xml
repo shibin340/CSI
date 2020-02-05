@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
     tools:context=".ApplyLeave">
 
     <TextView
@@ -20,6 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_marginTop="50dp"
         android:layout_below="@id/leave_heading_tv">
         <TextView
             android:layout_width="wrap_content"
@@ -43,7 +45,7 @@
                 android:text="-"
                 android:textSize="25sp"
                 android:gravity="center"
-
+                android:background="#FC5B28"
                 android:layout_margin="5dp"/>
             <EditText
                 android:layout_width="60dp"
@@ -61,6 +63,7 @@
                 android:text="+"
                 android:textSize="25sp"
                 android:gravity="center"
+                android:background="#FC5B28"
                 android:layout_margin="5dp"/>
         </LinearLayout>
         <Button
@@ -69,6 +72,6 @@
             android:id="@+id/bt_apply_leave"
             android:text="Apply for leave"
             android:layout_margin="20dp"
-            android:background="@drawable/custom_bt"/>
+            android:background="@drawable/add_event_bt_bg"/>
     </LinearLayout>
 </RelativeLayout>

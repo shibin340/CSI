@@ -39,14 +39,14 @@
         android:layout_height="wrap_content"
         android:src="@drawable/csi_pune_logo"
         android:layout_gravity="center"
-        android:layout_marginTop="80dp"/>
+        android:layout_marginTop="50dp"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:boxCornerRadiusBottomStart="10dp"
             android:layout_marginBottom="2dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="45dp"
             app:boxCornerRadiusBottomEnd="10dp">
             <EditText
                 android:id="@+id/email_et"
@@ -86,18 +86,21 @@
         android:id="@+id/tv_forgot_password"
         android:text="FORGOT PASSWORD ?"
         android:layout_gravity="center"
-            android:textStyle="bold"
+        android:textStyle="bold"
         android:layout_marginBottom="15dp"
         />
         <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_gravity="center"
             android:background="#FC5B28"
             app:cardCornerRadius="10dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="50dp"
             android:layout_marginBottom="10dp">
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/sign_in_bt"
                 android:layout_above="@id/RLDontHaveAccount"

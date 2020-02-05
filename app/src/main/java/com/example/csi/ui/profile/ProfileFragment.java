@@ -25,7 +25,7 @@ import java.io.ByteArrayInputStream;
 
 public class ProfileFragment extends Fragment {
 
-    TextView edit_profile,user_email_tv,user_number_tv,user_dob_tv,user_address_tv,user_nation_tv,user_uid_tv,user_pan_tv,user_language_tv,user_education_tv,user_doj_tv;
+    TextView edit_profile,user_name,user_email_tv,user_number_tv,user_dob_tv,user_address_tv,user_nation_tv,user_uid_tv,user_pan_tv,user_language_tv,user_education_tv,user_doj_tv;
     ImageView image_profile;
     DatabaseHelper db;
     private ProfileViewModel notificationsViewModel;
@@ -37,6 +37,7 @@ public class ProfileFragment extends Fragment {
         final String msg = intent.getStringExtra("EXTRA_MESSAGE");
         edit_profile=root.findViewById(R.id.edit_profile);
         image_profile=root.findViewById(R.id.image_profile);
+        user_name=root.findViewById(R.id.user_name_tv);
         user_email_tv = root.findViewById(R.id.user_email_tv);
         user_number_tv = root.findViewById(R.id.user_number_tv);
         user_address_tv = root.findViewById(R.id.user_address);
@@ -63,6 +64,8 @@ public class ProfileFragment extends Fragment {
         String language = cursor.getString(cursor.getColumnIndex("Language"));
         String education = cursor.getString(cursor.getColumnIndex("Education"));
         String doj = cursor.getString(cursor.getColumnIndex("DOJ"));
+        String username = cursor.getString(cursor.getColumnIndex("username"));
+        user_name.setText(username);
         if(address != null)
             user_address_tv.setText(address);
         if(nationality!=null)

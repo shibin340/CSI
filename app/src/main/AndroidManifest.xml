@@ -14,11 +14,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AdminAssignEmpID"></activity>
+        <activity android:name=".PasswordResetVerification"></activity>
+        <activity android:name=".ForgotPassword" />
+        <activity android:name=".Laptop" />
+        <activity android:name=".AdminAssignLaptop" />
+        <activity android:name=".AdminAssignEmpID" />
         <activity android:name=".AdminAssignDOJ" />
-        <activity android:name=".Upload_gallery" />
         <activity android:name=".ApplyLeave" />
-        <activity android:name=".FullScreenImage" />
         <activity android:name=".AdminAssignTask" />
         <activity android:name=".AdminAddEvent" />
         <activity android:name=".HelpDesk" />

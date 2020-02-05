@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.io.ByteArrayInputStream;
 
 public class UserData extends AppCompatActivity {
-    TextView txt1,txt2,txt3,txt4;
+    TextView txt1,txt2,txt3,txt4,txt5;
     DatabaseHelper db;
     Cursor mcursor;
     ImageView img;
@@ -26,6 +26,7 @@ public class UserData extends AppCompatActivity {
         txt2=findViewById(R.id.e_txt);
         txt3=findViewById(R.id.d_txt);
         txt4=findViewById(R.id.p_txt);
+        txt5=findViewById(R.id.id_value);
         Intent intent = getIntent();
         String data;
         db = new DatabaseHelper(this);
@@ -37,6 +38,7 @@ public class UserData extends AppCompatActivity {
                 String dateofbday = mcursor.getString(mcursor.getColumnIndex("dob"));
                 String phno=mcursor.getString(mcursor.getColumnIndex("Phonenum"));
                 String email=mcursor.getString(mcursor.getColumnIndex("email"));
+                String empid=mcursor.getString(mcursor.getColumnIndex("EmpID"));
                 byte[] imagebyte = mcursor.getBlob(mcursor.getColumnIndex("image"));
                 if(imagebyte!=null)
                 {
@@ -54,6 +56,7 @@ public class UserData extends AppCompatActivity {
                 txt2.setText(email);
                 txt3.setText(dateofbday);
                 txt4.setText(phno);
+                txt5.setText(empid);
             }while(mcursor.moveToNext());
         }
     }

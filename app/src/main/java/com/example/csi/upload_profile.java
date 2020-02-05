@@ -29,7 +29,6 @@ public class upload_profile extends AppCompatActivity {
     Uri imgpath;
     Bitmap imagetostore;
     DatabaseHelper db;
-    EditText imagename;
     EditText edit_email,edit_number,edit_address,edit_nation,edit_uid,edit_pan,edit_language,edit_education;
     TextView edit_dob;
     @Override
@@ -39,7 +38,6 @@ public class upload_profile extends AppCompatActivity {
         bt_choose=findViewById(R.id.bt_choose);
         bt_upload=findViewById(R.id.bt_upload);
         imag_upload=findViewById(R.id.img_upload);
-        imagename=findViewById(R.id.imgname);
         db=new DatabaseHelper(this);
         edit_email = findViewById(R.id.edit_email);
         edit_number = findViewById(R.id.edit_phone);

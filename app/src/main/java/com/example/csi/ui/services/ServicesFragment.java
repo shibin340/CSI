@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.csi.ApplyLeave;
 import com.example.csi.HelpDesk;
+import com.example.csi.Laptop;
 import com.example.csi.R;
 import com.example.csi.TimeSheet;
 import com.example.csi.csiDirectory;
@@ -99,6 +100,14 @@ public class ServicesFragment extends Fragment {
                 intent.putExtra(Intent.EXTRA_SUBJECT, "Advance Payment Request");
                 intent.putExtra(Intent.EXTRA_TEXT, "Request of advance payment of current month.(Also attach the image of your salary slip)");
                 startActivity(Intent.createChooser(intent, "Email via..."));
+            }
+        });
+        laptopbt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1=new Intent(getActivity().getApplicationContext(), Laptop.class);
+                intent1.putExtra("username",msg);
+                startActivity(intent1);
             }
         });
         return root;

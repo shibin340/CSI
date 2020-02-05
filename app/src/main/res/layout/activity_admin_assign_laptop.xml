@@ -4,50 +4,64 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login_bg"
-    tools:context=".AdminAssignEmpID">
+    tools:context=".AdminAssignLaptop">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="Add Employee ID for employee!"
+        android:text="Assign Laptops to employees!"
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:textColor="#ffffff"
         android:layout_margin="15dp"
         android:textSize="25sp"
-        android:id="@+id/addempid_tv" />
+        android:id="@+id/addlaptop_tv" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/email_bg"
         android:hint="Email"
-        android:layout_below="@id/addempid_tv"
+        android:layout_below="@id/addlaptop_tv"
         android:paddingLeft="10dp"
         android:layout_margin="10dp"
-        android:id="@+id/emp_email"
+        android:id="@+id/laptop_email"
         />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/email_bg"
-        android:hint="Employee ID"
-        android:layout_below="@id/emp_email"
+        android:hint="Laptop ID"
+        android:layout_below="@id/laptop_email"
         android:paddingLeft="10dp"
         android:layout_margin="10dp"
-        android:id="@+id/emp_id_et"
+        android:id="@+id/laptop_id_et"
         />
 
+    <TextView
+        android:id="@+id/laptop_issue_date"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/laptop_id_et"
+        android:layout_margin="10dp"
+        android:background="@drawable/email_bg"
+        android:gravity="center|start|left"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="Issue date"
+        android:textColor="@color/hintColor"
+        android:textSize="18sp" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/assign_emp_id"
-        android:layout_below="@id/emp_id_et"
+        android:id="@+id/assign_laptop"
+        android:layout_below="@id/laptop_issue_date"
         android:textSize="18sp"
         android:layout_margin="15dp"
         android:background="@drawable/add_event_bt_bg"
         android:layout_centerHorizontal="true"
-        android:text="Add Employee ID"
+        android:text="Assign Laptop"
         android:textColor="#000"
         android:padding="10dp"
         />

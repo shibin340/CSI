@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class Upload extends AppCompatActivity {
 
-    Button eve_bt,task_bt,gal_add_bt,assign_doj,assign_empid;
+    Button eve_bt,task_bt,assign_doj,assign_empid,assign_laptop;
     DatabaseHelper db;
     TextView admin_permit_heading;
     Permission_Adapter pa;
@@ -24,9 +24,9 @@ public class Upload extends AppCompatActivity {
         setContentView(R.layout.activity_upload);
         eve_bt=findViewById(R.id.event_add_bt);
         task_bt=findViewById(R.id.task_add_bt);
-        gal_add_bt=findViewById(R.id.gal_add_bt);
         assign_doj=findViewById(R.id.add_doj_bt);
         assign_empid=findViewById(R.id.add_empid_bt);
+        assign_laptop=findViewById(R.id.assign_laptop);
         final RecyclerView recyclerView=findViewById(R.id.admin_rcv);
         admin_permit_heading=findViewById(R.id.admin_permit_heading);
         db = new DatabaseHelper(this);
@@ -58,12 +58,6 @@ public class Upload extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),AdminAssignTask.class));
             }
         });
-        gal_add_bt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),Upload_gallery.class));
-            }
-        });
         assign_doj.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,6 +68,12 @@ public class Upload extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),AdminAssignEmpID.class));
+            }
+        });
+        assign_laptop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),AdminAssignLaptop.class));
             }
         });
     }
