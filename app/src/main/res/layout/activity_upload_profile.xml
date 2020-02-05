@@ -47,12 +47,14 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:id="@+id/edit_email"
+                android:hint="Email"
                 android:inputType="textEmailAddress"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:id="@+id/edit_phone"
+                android:hint="Phone number"
                 android:inputType="phone"/>
             <TextView
                 android:id="@+id/edit_dob"
@@ -63,43 +65,48 @@
                 android:paddingLeft="10dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
-                android:textColor="#a2a2a2"
                 android:textSize="18sp" />
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:id="@+id/edit_address"
+                android:hint="Address"
                 android:inputType="textPostalAddress"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:id="@+id/edit_nationality"
+                android:hint="Nationality"
                 android:inputType="text"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:id="@+id/edit_uid"
+                android:hint="Aadhar number"
                 android:inputType="number"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:id="@+id/edit_pan"
+                android:hint="PAN-Card number"
                 android:inputType="text"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:id="@+id/edit_language"
+                android:hint="Language"
                 android:inputType="text"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:id="@+id/edit_education"
+                android:hint="Education"
                 android:inputType="text"/>
             <Button
                 android:layout_width="wrap_content"

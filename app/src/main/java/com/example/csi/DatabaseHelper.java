@@ -26,7 +26,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("Create table user(username text,email text primary key,Phonenum text,password text,dob text,task text,completed int,image BLOB default null,isAuthorized int,Address text default null,Nationality text default null,UID text default null,PAN text default null,Language text default null,Education text default null,DOJ text default null)");
+        db.execSQL("Create table user(username text,email text primary key,Phonenum text,EmpID text default null,password text,dob text,task text,completed int,image BLOB default null,isAuthorized int,Address text default null,Nationality text default null,UID text default null,PAN text default null,Language text default null,Education text default null,DOJ text default null)");
     }
 
     @Override
@@ -196,9 +196,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Cursor getRequestApproval()
     {
         SQLiteDatabase db = this.getReadableDatabase();
-
         Cursor cursor=db.rawQuery("select email from user where isAuthorized = 0 ",null);
-
         return cursor;
     }
 
@@ -263,5 +261,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         else
             return true;
+    }
+
+    public boolean addDateOfJoining(String email, String date) {
+        SQLiteDatabase db=this.getWritableDatabase();
+        db.execSQL("update user set DOJ =? where email=?",new String[]{date,email});
+        return true;
+    }
+
+    public boolean addEmpID(String email, String empid) {
+        SQLiteDatabase db=this.getWritableDatabase();
+        db.execSQL("update user set EmpID =? where email=?",new String[]{empid,email});
+        return true;
     }
 }

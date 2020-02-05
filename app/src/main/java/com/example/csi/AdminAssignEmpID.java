@@ -16,8 +16,8 @@ public class AdminAssignEmpID extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_assign_emp_id);
-        empid_email = findViewById(R.id.empid_email);
-        emp_id_et = findViewById(R.id.emp_id);
+        empid_email = findViewById(R.id.emp_email);
+        emp_id_et = findViewById(R.id.emp_id_et);
         assign_emp_id = findViewById(R.id.assign_emp_id);
         db = new DatabaseHelper(getApplicationContext());
         assign_emp_id.setOnClickListener(new View.OnClickListener() {

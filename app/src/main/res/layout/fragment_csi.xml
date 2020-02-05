@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.CSIfragment">
+    tools:context=".ui.CSIfragment"
+    android:background="#F8F8FF">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -16,7 +17,7 @@
                 android:id="@+id/card_gal_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                 app:cardBackgroundColor="#E2186F"
+                 app:cardBackgroundColor="#FF69B4"
                 android:layout_margin="10dp"
                 app:cardCornerRadius="7dp">
 
@@ -32,8 +33,10 @@
                     android:layout_marginRight="5dp"
                     android:layout_marginBottom="5dp"
                     android:text="Gallery"
-                    android:textColor="#DBD001"
-                    android:textSize="21sp" />
+                    android:textColor="@color/BLACK"
+                    android:textStyle="bold"
+                    android:textSize="30sp" />
+
               </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -156,7 +159,7 @@
                     android:layout_width="match_parent"
                     android:layout_below="@id/card_hiring"
                     android:layout_height="wrap_content"
-                    app:cardBackgroundColor="#E2186F"
+                    app:cardBackgroundColor="#FF69B4"
                     android:layout_margin="10dp"
                     app:cardCornerRadius="7dp">
 
@@ -172,8 +175,9 @@
                         android:layout_marginRight="5dp"
                         android:layout_marginBottom="5dp"
                         android:text="CSI Services"
-                        android:textColor="#DBD001"
-                        android:textSize="21sp" />
+                        android:textColor="@color/BLACK"
+                        android:textStyle="bold"
+                        android:textSize="30sp" />
                  </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
