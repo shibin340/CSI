@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_bg"
+    android:background="#F3F1F1"
     tools:context=".ShowAllData">
     <TextView
         android:layout_width="match_parent"
@@ -11,7 +11,7 @@
         android:layout_margin="15dp"
         android:textSize="24sp"
         android:padding="5dp"
-        android:textColor="#000"
+        android:textColor="#F50057"
         android:gravity="center"
         android:text="ALL TASKS"
         android:id="@+id/alldatastart"

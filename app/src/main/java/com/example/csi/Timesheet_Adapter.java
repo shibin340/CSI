@@ -36,8 +36,8 @@ public class Timesheet_Adapter extends RecyclerView.Adapter<Timesheet_Adapter.Da
         }
         final String username=mcursor.getString(mcursor.getColumnIndex(User));
         final String task=mcursor.getString(mcursor.getColumnIndex("task"));
-        holder.txt.setText(username);
-        holder.txt1.setText(task);
+        holder.txt.setText("Username:- "+username);
+        holder.txt1.setText("Task assigned:- "+task);
     }
 
     @Override
@@ -49,7 +49,7 @@ public class Timesheet_Adapter extends RecyclerView.Adapter<Timesheet_Adapter.Da
         public TextView txt,txt1;
         public Data_view_holder(@NonNull View itemView) {
             super(itemView);
-            txt=itemView.findViewById(R.id.time_txt);
+            txt=itemView.findViewById(R.id.user_txt);
             txt1=itemView.findViewById(R.id.task_txt);
         }
     }

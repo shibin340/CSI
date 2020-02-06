@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_bg"
+    android:background="#fff"
     tools:context=".HelpDesk">
 
     <TextView
@@ -17,7 +17,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:text="HelpDesk"
-        android:textColor="@color/BLACK"
+        android:textColor="#000"
         android:textSize="30sp"
         android:textStyle="bold" />
     <RelativeLayout
@@ -34,77 +34,68 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="CSI Contact :"
+                android:text="CSI Contact : "
                 android:id="@+id/csi_contact"
                 android:textSize="20sp"
-                android:textStyle="bold"
                 android:textColor="@color/BLACK"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="9112663629"
-                android:layout_marginLeft="10dp"
                 android:id="@+id/csi_contact_no"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="#E91E63"/>
+                android:textColor="#696868"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/help2"
             android:layout_below="@+id/help1"
-            android:layout_margin="10dp"
+            android:layout_margin="7dp"
             android:orientation="horizontal">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hardware Contact :"
+                android:text="Hardware Contact : "
                 android:id="@+id/hardware_contact"
                 android:textSize="20sp"
-                android:textStyle="bold"
                 android:textColor="@color/BLACK"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="9075071212"
-                android:layout_marginLeft="10dp"
                 android:id="@+id/hardware_contact_no"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="#E91E63"/>
+                android:textColor="#696868"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/help3"
             android:layout_below="@+id/help2"
-            android:layout_margin="10dp"
+            android:layout_margin="7dp"
             android:orientation="horizontal">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Network Contact :"
+                android:text="Network Contact : "
                 android:id="@+id/network_contact"
                 android:textSize="20sp"
-                android:textStyle="bold"
                 android:textColor="@color/BLACK"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="9021800207"
-                android:layout_marginLeft="10dp"
                 android:id="@+id/network_contact_no"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="#E91E63"/>
+                android:textColor="#696868"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/help4"
             android:layout_below="@+id/help3"
-            android:layout_margin="10dp"
+            android:layout_margin="7dp"
             android:orientation="horizontal">
             <TextView
                 android:layout_width="wrap_content"
@@ -112,7 +103,6 @@
                 android:text="Mail :"
                 android:id="@+id/mail_contact"
                 android:textSize="20sp"
-                android:textStyle="bold"
                 android:textColor="@color/BLACK"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -121,9 +111,20 @@
                 android:layout_marginLeft="10dp"
                 android:id="@+id/mail_contact_id"
                 android:textSize="20sp"
-                android:textStyle="bold"
                 android:textColor="#2196F3"/>
         </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/csi_logo"
+                android:layout_below="@id/help4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/csi_pune_logo"
+                android:layout_centerHorizontal="true"
+                />
+
+
     </RelativeLayout>
 
 </RelativeLayout>

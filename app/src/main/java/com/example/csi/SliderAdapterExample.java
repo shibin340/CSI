@@ -19,7 +19,7 @@ public class SliderAdapterExample extends SliderViewAdapter<SliderAdapterExample
         this.context = context;
     }
     public void setCount(int count) {
-        this.mCount = count;
+        mCount = count;
     }
 
     @Override
@@ -62,24 +62,27 @@ public class SliderAdapterExample extends SliderViewAdapter<SliderAdapterExample
                 Glide.with(viewHolder.itemView)
                         .load(R.drawable.gal_7)
                         .into(viewHolder.image);
-                viewHolder.textViewDescription.setText("Technical Event");
+                break;
+               // viewHolder.textViewDescription.setText("Technical Event");
             case 5:
                 Glide.with(viewHolder.itemView)
                         .load(R.drawable.gal_6)
                         .into(viewHolder.image);
-                viewHolder.textViewDescription.setText("Technical Event");
+                break;
+                //viewHolder.textViewDescription.setText("Technical Event");
             case 6:
                 Glide.with(viewHolder.itemView)
                         .load(R.drawable.gal_1)
                         .into(viewHolder.image);
-                viewHolder.textViewDescription.setText("Technical Event");
+                break;
+                //viewHolder.textViewDescription.setText("Technical Event");
         }
     }
 
     @Override
     public int getCount() {
         //slider view count could be dynamic size
-        return 7;
+        return mCount;
     }
 
     class SliderAdapterVH extends SliderViewAdapter.ViewHolder {
