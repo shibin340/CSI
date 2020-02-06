@@ -51,13 +51,27 @@
             android:textColor="#000"
             android:textSize="20sp"/-->
         <TextView
-            android:id="@+id/tvdob"
-            android:layout_width="match_parent"
+            android:id="@+id/tvdob_label"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/linear_wish"
             android:layout_margin="7dp"
-            android:textColor="#000"
-            android:textSize="18sp"/>
+            android:text="Birth-Date: "
+            android:textColor="#D8070707"
+            android:textSize="17sp"/>
+
+        <TextView
+            android:id="@+id/tvdob"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            android:layout_marginLeft="3dp"
+            android:layout_below="@id/linear_wish"
+            android:layout_toRightOf="@id/tvdob_label"
+            android:textColor="#D83C3A3A"
+            android:textSize="17sp" />
+
+
 
     </RelativeLayout>
 

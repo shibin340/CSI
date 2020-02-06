@@ -40,7 +40,7 @@
                     android:padding="1dp"
                     android:text="Welcome user"
                     android:textColor="#000"
-                    android:textSize="24sp"
+                    android:textSize="23sp"
                      />
                </com.google.android.material.appbar.AppBarLayout>
             <LinearLayout
@@ -66,23 +66,19 @@
                         app:cardCornerRadius="7dp">
                         <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="50dp"
+                            android:layout_height="40dp"
                             android:id="@+id/linear_card_bday">
 
                             <TextView
                                 android:id="@+id/tvbday"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="5dp"
-                                android:layout_marginLeft="5dp"
-                                android:layout_marginTop="5dp"
+                                android:layout_marginLeft="3dp"
                                 android:layout_centerVertical="true"
-                                android:layout_marginEnd="5dp"
-                                android:layout_marginRight="5dp"
-                                android:layout_marginBottom="5dp"
+                                android:padding="5dp"
                                 android:text="Birthday Notifications"
                                 android:textColor="#F50057"
-                                android:textSize="19sp" />
+                                android:textSize="17sp" />
 
                             <ImageView
                                 android:layout_width="35dp"
@@ -120,23 +116,19 @@
                         app:cardCornerRadius="7dp">
                         <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="50dp"
+                            android:layout_height="40dp"
                             android:id="@+id/linear_card_events">
 
                             <TextView
                                 android:id="@+id/tv_events"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="5dp"
-                                android:layout_marginLeft="5dp"
-                                android:layout_marginTop="5dp"
-                                android:layout_marginEnd="5dp"
-                                android:layout_marginRight="5dp"
+                                android:padding="5dp"
+                                android:layout_marginLeft="3dp"
                                 android:layout_centerVertical="true"
-                                android:layout_marginBottom="5dp"
                                 android:text="Upcoming Events"
                                 android:textColor="#F50057"
-                                android:textSize="19sp" />
+                                android:textSize="17sp" />
                             <ImageView
                                 android:layout_width="32dp"
                                 android:layout_height="32dp"

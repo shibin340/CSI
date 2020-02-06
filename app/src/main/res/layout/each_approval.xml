@@ -6,15 +6,17 @@
 
 
     <Button
-        android:layout_width="60dp"
-        android:layout_height="50dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:id="@+id/tick"
+        android:layout_centerInParent="true"
         android:background="@drawable/tick"
         android:layout_toLeftOf="@id/cross"/>
     <Button
-        android:layout_width="60dp"
-        android:layout_height="50dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:id="@+id/cross"
+        android:layout_centerInParent="true"
         android:background="@drawable/cross"
         android:layout_alignParentRight="true"/>
     <TextView
@@ -23,7 +25,8 @@
         android:layout_height="70dp"
         android:gravity="center"
         android:id="@+id/approve_name"
-        android:textSize="22sp"
+        android:textSize="21sp"
+        android:textColor="#FA1566"
         android:text="empty."
         />
 

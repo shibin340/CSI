@@ -70,7 +70,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="work-profile"
-                                android:textSize="20sp" />
+                                android:textSize="18sp" />
 
                         </LinearLayout>
                         <LinearLayout
@@ -89,7 +89,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Task-Assigned"
-                                android:textSize="20sp" />
+                                android:textSize="18sp" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -101,7 +101,7 @@
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:layout_margin="12dp"
+                    android:layout_margin="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
@@ -116,7 +116,7 @@
                         android:text="username"
                         android:id="@+id/user_name_tv"
                         android:layout_marginLeft="15dp"
-                        android:textSize="18sp"/>
+                        android:textSize="16sp"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_margin="12dp"
@@ -134,7 +134,7 @@
                         android:text="user@gmail.com"
                         android:id="@+id/user_email_tv"
                         android:layout_marginLeft="15dp"
-                        android:textSize="18sp"/>
+                        android:textSize="16sp"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_margin="12dp"
@@ -151,7 +151,7 @@
                         android:layout_marginLeft="15dp"
                         android:id="@+id/user_number_tv"
                         android:text="+91xxxxxxxxxx"
-                        android:textSize="18sp" />
+                        android:textSize="16sp" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_margin="12dp"
@@ -168,7 +168,7 @@
                         android:text="20/01/2000"
                         android:id="@+id/user_dob"
                         android:layout_marginLeft="15dp"
-                        android:textSize="18sp"/>
+                        android:textSize="16sp"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_margin="12dp"
@@ -185,7 +185,7 @@
                         android:text="--Address--"
                         android:id="@+id/user_address"
                         android:layout_marginLeft="15dp"
-                        android:textSize="18sp"/>
+                        android:textSize="16sp"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_margin="12dp"
@@ -202,7 +202,7 @@
                         android:text="--Nationality--"
                         android:id="@+id/user_nationality"
                         android:layout_marginLeft="15dp"
-                        android:textSize="18sp"/>
+                        android:textSize="16sp"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_margin="12dp"
@@ -219,7 +219,7 @@
                         android:text="--Aadhar number--"
                         android:id="@+id/user_uid"
                         android:layout_marginLeft="15dp"
-                        android:textSize="18sp"/>
+                        android:textSize="16sp"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_margin="12dp"
@@ -236,7 +236,7 @@
                         android:text="--PAN Card number--"
                         android:id="@+id/user_pan"
                         android:layout_marginLeft="15dp"
-                        android:textSize="18sp"/>
+                        android:textSize="16sp"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_margin="12dp"
@@ -253,7 +253,7 @@
                         android:text="--Language--"
                         android:id="@+id/user_language"
                         android:layout_marginLeft="15dp"
-                        android:textSize="18sp"/>
+                        android:textSize="16sp"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_margin="12dp"
@@ -270,7 +270,7 @@
                         android:text="--Education--"
                         android:id="@+id/user_education"
                         android:layout_marginLeft="15dp"
-                        android:textSize="18sp"/>
+                        android:textSize="16sp"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_margin="12dp"
@@ -287,7 +287,7 @@
                         android:text="--Date of Joining--"
                         android:id="@+id/user_doj"
                         android:layout_marginLeft="15dp"
-                        android:textSize="18sp"/>
+                        android:textSize="16sp"/>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

@@ -48,7 +48,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/assign_doj_bt"
         android:layout_below="@id/doj_date"
-        android:textSize="18sp"
         android:layout_margin="15dp"
         android:background="@drawable/add_event_bt_bg"
         android:layout_centerHorizontal="true"

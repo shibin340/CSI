@@ -82,6 +82,5 @@
         android:padding="10dp"
         android:text="Assign task"
         android:textColor="#000"
-        android:textSize="18sp"
         />
 </RelativeLayout>

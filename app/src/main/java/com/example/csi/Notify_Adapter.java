@@ -39,7 +39,7 @@ public class Notify_Adapter extends RecyclerView.Adapter<Notify_Adapter.Notify_v
         String email=mcursor.getString(mcursor.getColumnIndex(mail));
         String dateofbday=mcursor.getString(mcursor.getColumnIndex(dob));
         holder.tvname.setText("Happy birthday "+username+"!!");
-        holder.tvdob.setText("Birth Date : "+dateofbday);
+        holder.tvdob.setText(dateofbday);
     }
 
     @Override
