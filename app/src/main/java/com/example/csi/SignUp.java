@@ -16,7 +16,7 @@ import java.util.StringTokenizer;
 
 public class SignUp extends AppCompatActivity {
     DatabaseHelper db;
-    EditText ed_firstname,ed_lastname,ed_email,ed_password,ed_confirm,phone_no;
+    EditText ed_firstname,ed_lastname,ed_email,ed_password,ed_confirm,phone_no,security_question;
     Button button1;
     TextView ed_dob,button2;
 
@@ -30,6 +30,7 @@ public class SignUp extends AppCompatActivity {
         ed_lastname = findViewById(R.id.et_lastname);
         ed_password = findViewById(R.id.et_password);
         ed_confirm = findViewById(R.id.et_confirm);
+        security_question = findViewById(R.id.et_security_question);
         phone_no = findViewById(R.id.et_contact_no);
         ed_dob=findViewById(R.id.et_dob);
         button1 = findViewById(R.id.sign_up_bt);
@@ -69,20 +70,20 @@ public class SignUp extends AppCompatActivity {
                 else if(ed_password.getText().toString().trim().equals("")){
                     Toast.makeText(getApplicationContext(), "Enter Password", Toast.LENGTH_SHORT).show();
                 }
-                else if(s_arr.countTokens()!=3)
-                {
+                else if(s_arr.countTokens()!=3) {
                     Toast.makeText(getApplicationContext(),"Incorrect Dob",Toast.LENGTH_SHORT).show();
                 }
                 else if(ed_confirm.getText().toString().trim().equals("")){
                     Toast.makeText(getApplicationContext(), "Confirm Password", Toast.LENGTH_SHORT).show();
                 }
-                else if(!ed_password.getText().toString().trim().equals(ed_confirm.getText().toString().trim()))
-                {
+                else if(!ed_password.getText().toString().trim().equals(ed_confirm.getText().toString().trim())) {
                     Toast.makeText(getApplicationContext(),"Password is not matching",Toast.LENGTH_SHORT).show();
                 }
-                else if(phone_no.getText().toString().trim().equals("") || phone_no.getText().toString().length() != 10)
-                {
+                else if(phone_no.getText().toString().trim().equals("") || phone_no.getText().toString().length() != 10) {
                     Toast.makeText(getApplicationContext(),"Enter valid contact number",Toast.LENGTH_SHORT).show();
+                }
+                else if(security_question.getText().toString().trim().equals("")){
+                    Toast.makeText(getApplicationContext(),"Please enter answer to the security question",Toast.LENGTH_SHORT).show();
                 }
                 else if(!ed_email.getText().toString().trim().isEmpty()){
                     boolean check = db.checkmail(ed_email.getText().toString());
@@ -93,7 +94,7 @@ public class SignUp extends AppCompatActivity {
                         String tasklist[]= res.getStringArray(R.array.tasks);
                         int size=tasklist.length-1;
                         int index=(int)(Math.random() * size) +1;
-                        boolean insert = db.insert((ed_firstname.getText().toString().trim()+" "+ed_lastname.getText().toString().trim()),ed_email.getText().toString(),ed_password.getText().toString(),ed_dob.getText().toString(),tasklist[index],phone_no.getText().toString().trim());
+                        boolean insert = db.insert((ed_firstname.getText().toString().trim()+" "+ed_lastname.getText().toString().trim()),ed_email.getText().toString(),ed_password.getText().toString(),ed_dob.getText().toString(),tasklist[index],phone_no.getText().toString().trim(),security_question.getText().toString().trim().toLowerCase());
                         if(insert==true) {
                             Toast.makeText(getApplicationContext(), "Registered successfully!", Toast.LENGTH_SHORT).show();
                             ed_confirm.setText(null);
@@ -105,6 +106,7 @@ public class SignUp extends AppCompatActivity {
                             ed_firstname.setText(null);
                             ed_lastname.setText(null);
                             phone_no.setText(null);
+                            security_question.setText(null);
                             startActivity(new Intent(getApplicationContext(),UserLogin.class));
                             //finish();
                         }

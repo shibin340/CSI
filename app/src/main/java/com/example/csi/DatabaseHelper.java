@@ -26,7 +26,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("Create table user(username text,email text primary key,Phonenum text,EmpID text default null,password text,dob text,task text,completed int,image BLOB default null,isAuthorized int,Address text default null,Nationality text default null,UID text default null,PAN text default null,Language text default null,Education text default null,DOJ text default null,LaptopID text default null,Laptop_issue_date text default null)");
+        db.execSQL("Create table user(username text,email text primary key,Phonenum text,Security_answer text,EmpID text default null,password text,dob text,task text,completed int,image BLOB default null,isAuthorized int,Address text default null,Nationality text default null,UID text default null,PAN text default null,Language text default null,Education text default null,DOJ text default null,LaptopID text default null,Laptop_issue_date text default null)");
     }
 
     @Override
@@ -35,7 +35,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     //Insertion
-    public boolean insert(String username,String email,String password,String dob,String task1,String phno){
+    public boolean insert(String username,String email,String password,String dob,String task1,String phno,String answer){
         SQLiteDatabase db= this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("username",username);
@@ -46,6 +46,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put("completed",0);
         contentValues.put("isAuthorized",0);
         contentValues.put("Phonenum",phno);
+        contentValues.put("Security_answer",answer);
         long ins = db.insert("user",null,contentValues);
         if(ins==-1)
             return false;
@@ -115,7 +116,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         else
             return true;
-
     }
 
     //after cross
@@ -133,9 +133,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         else
         {
             return true;
-
         }
-        //db.execSQL("update user set isAuthorized =1 where email=?",new String[]{email});
     }
     //Retrieve data
     public Cursor allData(){
@@ -297,5 +295,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("Select EmpID,email,LaptopID,Laptop_issue_date from user where email = '" +data+ "'",null);
         return cursor;
+    }
+
+    public boolean resetPassword(String email,String password)
+    {
+        SQLiteDatabase db=this.getWritableDatabase();
+        db.execSQL("update user set password =? where email=?",new String[]{password,email});
+        return true;
     }
 }

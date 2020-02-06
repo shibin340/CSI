@@ -108,17 +108,32 @@
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
-                    <EditText
-                        android:id="@+id/et_contact_no"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginRight="15dp"
-                        android:paddingLeft="10dp"
-                        android:hint="Contact number"
-                        android:inputType="number" />
-                    </com.google.android.material.textfield.TextInputLayout>
 
+                        <EditText
+                            android:id="@+id/et_contact_no"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginBottom="5dp"
+                            android:hint="Contact number"
+                            android:inputType="number"
+                            android:paddingLeft="10dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <EditText
+                            android:id="@+id/et_security_question"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:hint="Who is your favorite superhero?"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
+                            android:paddingLeft="10dp"
+                            android:inputType="textEmailAddress" />
+                    </com.google.android.material.textfield.TextInputLayout>
                     <TextView
                         android:id="@+id/et_dob"
                         android:layout_width="match_parent"
@@ -129,6 +144,7 @@
                         android:paddingLeft="10dp"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
+                        android:layout_marginTop="10dp"
                         android:text="Date-of-birth"
                         android:textColor="#66000000"
                         android:textSize="18sp" />
@@ -164,6 +180,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:orientation="horizontal"
+                        android:layout_marginTop="7dp"
                         android:layout_marginBottom="18dp"
                         android:id="@+id/RLHaveAccount">
                         <TextView

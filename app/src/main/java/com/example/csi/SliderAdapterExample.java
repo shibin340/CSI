@@ -37,26 +37,25 @@ public class SliderAdapterExample extends SliderViewAdapter<SliderAdapterExample
                 Glide.with(viewHolder.itemView)
                         .load(R.drawable.gal_2)
                         .into(viewHolder.image);
-                viewHolder.textViewDescription.setText("Gaming Events");
+                //viewHolder.textViewDescription.setText("Gaming Events");
                 break;
             case 1:
                 Glide.with(viewHolder.itemView)
                         .load(R.drawable.gal_3)
                         .into(viewHolder.image);
-                viewHolder.textViewDescription.setText("Highlights");
+                //viewHolder.textViewDescription.setText("Highlights");
                 break;
             case 2:
                 Glide.with(viewHolder.itemView)
                         .load(R.drawable.gal_4)
                         .into(viewHolder.image);
-                viewHolder.textViewDescription.setText("Social Work");
+                //viewHolder.textViewDescription.setText("Social Work");
                 break;
             case 3:
                 Glide.with(viewHolder.itemView)
                         .load(R.drawable.gal_5)
                         .into(viewHolder.image);
-                viewHolder.textViewDescription.setText("Teacher Day");
-
+                //viewHolder.textViewDescription.setText("Teacher Day");
                 break;
             case 4:
                 Glide.with(viewHolder.itemView)
