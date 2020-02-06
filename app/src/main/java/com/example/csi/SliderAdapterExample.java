@@ -35,32 +35,42 @@ public class SliderAdapterExample extends SliderViewAdapter<SliderAdapterExample
         switch (position) {
             case 0:
                 Glide.with(viewHolder.itemView)
-                        .load(R.drawable.email_profile)
+                        .load(R.drawable.gal_2)
                         .into(viewHolder.image);
                 viewHolder.textViewDescription.setText("Gaming Events");
                 break;
             case 1:
                 Glide.with(viewHolder.itemView)
-                        .load("https://firebasestorage.googleapis.com/v0/b/compsa-78af5.appspot.com/o/uploads%2FHighlights%2F.jpg?alt=media&token=6349dd89-ee47-4ddb-8815-b56ba5d55792")
+                        .load(R.drawable.gal_3)
                         .into(viewHolder.image);
                 viewHolder.textViewDescription.setText("Highlights");
                 break;
             case 2:
                 Glide.with(viewHolder.itemView)
-                        .load("https://firebasestorage.googleapis.com/v0/b/compsa-78af5.appspot.com/o/uploads%2FSocial%20Work%2FCleaning%20Of%20Ghats%20.png?alt=media&token=9fde4b12-605f-45df-aa79-6c6dc2f5778f")
+                        .load(R.drawable.gal_4)
                         .into(viewHolder.image);
                 viewHolder.textViewDescription.setText("Social Work");
                 break;
             case 3:
                 Glide.with(viewHolder.itemView)
-                        .load("https://firebasestorage.googleapis.com/v0/b/compsa-78af5.appspot.com/o/uploads%2FTeachers%20day%2FTeachers%20Day%202K19.jpg?alt=media&token=0a4e8323-553e-44d6-84d7-6d9cc8f25310")
+                        .load(R.drawable.gal_5)
                         .into(viewHolder.image);
                 viewHolder.textViewDescription.setText("Teacher Day");
 
                 break;
             case 4:
                 Glide.with(viewHolder.itemView)
-                        .load("https://firebasestorage.googleapis.com/v0/b/compsa-78af5.appspot.com/o/uploads%2FTechnical%20Events%2FCoding%20Event%20Under%20Technical%20Event.jpg?alt=media&token=a7d081cd-ce38-4f5d-ad10-b8586059dabb")
+                        .load(R.drawable.gal_7)
+                        .into(viewHolder.image);
+                viewHolder.textViewDescription.setText("Technical Event");
+            case 5:
+                Glide.with(viewHolder.itemView)
+                        .load(R.drawable.gal_6)
+                        .into(viewHolder.image);
+                viewHolder.textViewDescription.setText("Technical Event");
+            case 6:
+                Glide.with(viewHolder.itemView)
+                        .load(R.drawable.gal_1)
                         .into(viewHolder.image);
                 viewHolder.textViewDescription.setText("Technical Event");
         }
@@ -69,7 +79,7 @@ public class SliderAdapterExample extends SliderViewAdapter<SliderAdapterExample
     @Override
     public int getCount() {
         //slider view count could be dynamic size
-        return 5;
+        return 7;
     }
 
     class SliderAdapterVH extends SliderViewAdapter.ViewHolder {

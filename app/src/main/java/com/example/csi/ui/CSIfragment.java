@@ -29,7 +29,7 @@ public class CSIfragment extends Fragment{
         //slider image
 
         final SliderAdapterExample adapter = new SliderAdapterExample(getActivity().getApplicationContext());
-        adapter.setCount(5);
+        adapter.setCount(7);
         sliderView.setSliderAdapter(adapter);
         sliderView.setIndicatorAnimation(IndicatorAnimations.SLIDE); //set indicator animation by using SliderLayout.IndicatorAnimations. :WORM or THIN_WORM or COLOR or DROP or FILL or NONE or SCALE or SCALE_DOWN or SLIDE and SWAP!!
         sliderView.setSliderTransformAnimation(SliderAnimations.FADETRANSFORMATION);
