@@ -57,7 +57,7 @@ public class ApplyLeave extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Enter valid number of days.",Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    String email = "ansarisaifulla7@gmail.com";
+                    String email = "contact@creditsystemsindia.com";
                     Intent intent = new Intent(Intent.ACTION_SENDTO);
                     intent.setData(Uri.parse("mailto:"));
                     intent.putExtra(Intent.EXTRA_EMAIL, new String[]{email});

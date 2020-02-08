@@ -36,7 +36,7 @@ public class AdminAddEvent extends AppCompatActivity {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int day) {
                         month = month + 1;
-                        String date = day + "/" + month + "/" + year;
+                        String date = day + "-" + month + "-" + year;
                         eve_date.setText(date);
                         eve_date.setTextColor(getResources().getColor(R.color.BLACK));
                     }

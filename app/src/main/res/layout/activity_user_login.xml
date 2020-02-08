@@ -31,7 +31,7 @@
             android:layout_margin="7dp"
             android:textStyle="bold"
             android:textSize="16sp"
-            android:textColor="@color/white"/>
+            android:textColor="@color/BLACK"/>
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/csi_logo"
@@ -133,8 +133,10 @@
             android:layout_height="wrap_content"
             android:id="@+id/sign_up_tv"
             android:onClick="moveToSignUp"
+            android:text=" Sign Up"
+            android:textColor="#fff"
+            android:textSize="19dp"
             android:layout_toRightOf="@+id/tv_dont_have_an_acc"
-            android:background="@drawable/sign_in_tv"
             />
     </LinearLayout>
     </LinearLayout>

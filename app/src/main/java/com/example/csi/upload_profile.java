@@ -88,7 +88,7 @@ public class upload_profile extends AppCompatActivity {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int day) {
                         month = month + 1;
-                        String date = day + "/" + month + "/" + year;
+                        String date = day + "-" + month + "-" + year;
                         edit_dob.setText(date);
                         edit_dob.setTextColor(getResources().getColor(R.color.BLACK));
                     }
@@ -96,20 +96,23 @@ public class upload_profile extends AppCompatActivity {
                 datePickerDialog.show();
             }
         });
-        bt_upload.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(imag_upload.getDrawable()!=null && !email.isEmpty()) {
-                    if(db.storeimage(imagetostore,email))
-                        Toast.makeText(getApplicationContext(),"inserted successfully ",Toast.LENGTH_SHORT).show();
-                }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"please select image ",Toast.LENGTH_SHORT).show();
+        try {
+            bt_upload.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (imag_upload.getDrawable() != null && !email.isEmpty()) {
+                        if (db.storeimage(imagetostore, email))
+                            Toast.makeText(getApplicationContext(), "inserted successfully ", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "please select image ", Toast.LENGTH_SHORT).show();
 
+                    }
                 }
-            }
-        });
+            });
+        }
+        catch (Exception e) {
+            Toast.makeText(getApplicationContext(), e.getMessage(),Toast.LENGTH_SHORT).show();
+        }
         save_data.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

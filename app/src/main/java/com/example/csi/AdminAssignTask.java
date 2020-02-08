@@ -17,6 +17,7 @@ public class AdminAssignTask extends AppCompatActivity {
     EditText task_email,task_desc;
     TextView start_date,end_date;
     Button task_bt;
+    DatabaseHelper db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +27,7 @@ public class AdminAssignTask extends AppCompatActivity {
         task_bt=findViewById(R.id.task_bt);
         start_date=findViewById(R.id.task_start_date);
         end_date=findViewById(R.id.task_end_date);
+
         Calendar calendar = Calendar.getInstance();
         final int year = calendar.get(Calendar.YEAR);
         final int month = calendar.get(Calendar.MONTH);
@@ -37,7 +39,7 @@ public class AdminAssignTask extends AppCompatActivity {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int day) {
                         month = month + 1;
-                        String date = day + "/" + month + "/" + year;
+                        String date = day + "-" + month + "-" + year;
                         start_date.setText(date);
                         start_date.setTextColor(getResources().getColor(R.color.BLACK));
                     }
@@ -52,7 +54,7 @@ public class AdminAssignTask extends AppCompatActivity {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int day) {
                         month = month + 1;
-                        String date = day + "/" + month + "/" + year;
+                        String date = day + "-" + month + "-" + year;
                         end_date.setText(date);
                         end_date.setTextColor(getResources().getColor(R.color.BLACK));
                     }
@@ -84,6 +86,10 @@ public class AdminAssignTask extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "Assigned successfully ", Toast.LENGTH_SHORT).show();
                             task_email.setText(null);
                             task_desc.setText(null);
+                            start_date.setText("start-date");
+                            start_date.setTextColor(getResources().getColor(R.color.hintColor));
+                            end_date.setText("end-date");
+                            end_date.setTextColor(getResources().getColor(R.color.hintColor));
                         } else {
                             Toast.makeText(getApplicationContext(), "Insertion failed", Toast.LENGTH_SHORT).show();
                         }

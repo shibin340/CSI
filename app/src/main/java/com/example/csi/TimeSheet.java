@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -65,6 +66,12 @@ public class TimeSheet extends AppCompatActivity {
                     else
                     {
                         //if(status)
+                        Intent intent = new Intent(Intent.ACTION_SENDTO);
+                        intent.setData(Uri.parse("mailto:"));
+                        intent.putExtra(Intent.EXTRA_EMAIL  , new String[] { "contact@creditsystemsindia.com" });
+                        intent.putExtra(Intent.EXTRA_SUBJECT, "Assignment submission");
+                        intent.putExtra(Intent.EXTRA_TEXT, t_edittxt.getText().toString().trim());
+                        startActivity(Intent.createChooser(intent, "Email via..."));
                         t_bt1.setText("Submitted");
                         t_bt1.setBackgroundColor(getResources().getColor(R.color.GRAY));
                         t_bt1.setHeight(70);
@@ -72,7 +79,6 @@ public class TimeSheet extends AppCompatActivity {
                         if(db.insertstatus(userid))
                         {
                             Toast.makeText(getApplicationContext(),"successfully submitted",Toast.LENGTH_SHORT).show();
-
                         }
 
                     }

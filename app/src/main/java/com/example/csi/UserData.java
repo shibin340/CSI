@@ -51,7 +51,6 @@ public class UserData extends AppCompatActivity {
                     img.setBackgroundResource(R.drawable.ic_person_black_24dp);
 
                 }
-
                 txt1.setText(username);
                 txt2.setText(email);
                 txt3.setText(dateofbday);

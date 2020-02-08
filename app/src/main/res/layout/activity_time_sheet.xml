@@ -21,15 +21,15 @@
                 android:layout_marginTop="50dp"
                 android:padding="5dp"
                 android:textColor="#000"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+                android:textSize="22sp"
+                 />
 
             <EditText
                 android:id="@+id/t_edittxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/t_txt"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="30dp"
                 android:hint="Paste file drive link here"
                 android:padding="5dp" />
 

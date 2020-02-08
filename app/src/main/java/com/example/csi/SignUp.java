@@ -46,7 +46,7 @@ public class SignUp extends AppCompatActivity {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int day) {
                         month = month + 1;
-                        String date = day + "/" + month + "/" + year;
+                        String date = day + "-" + month + "-" + year;
                         ed_dob.setText(date);
                         ed_dob.setTextColor(getResources().getColor(R.color.BLACK));
                     }
@@ -57,7 +57,7 @@ public class SignUp extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                StringTokenizer s_arr = new StringTokenizer(ed_dob.getText().toString().trim(),"/",false);
+                StringTokenizer s_arr = new StringTokenizer(ed_dob.getText().toString().trim(),"-",false);
                 if(ed_firstname.getText().toString().trim().equals("")){
                     Toast.makeText(getApplicationContext(), "Enter First name", Toast.LENGTH_SHORT).show();
                 }
@@ -90,11 +90,11 @@ public class SignUp extends AppCompatActivity {
                     if(check==true)
                     {
 
-                        Resources res = getResources();
+                       /* Resources res = getResources();
                         String tasklist[]= res.getStringArray(R.array.tasks);
                         int size=tasklist.length-1;
-                        int index=(int)(Math.random() * size) +1;
-                        boolean insert = db.insert((ed_firstname.getText().toString().trim()+" "+ed_lastname.getText().toString().trim()),ed_email.getText().toString(),ed_password.getText().toString(),ed_dob.getText().toString(),tasklist[index],phone_no.getText().toString().trim(),security_question.getText().toString().trim().toLowerCase());
+                        int index=(int)(Math.random() * size) +1; */
+                        boolean insert = db.insert((ed_firstname.getText().toString().trim()+" "+ed_lastname.getText().toString().trim()),ed_email.getText().toString(),ed_password.getText().toString(),ed_dob.getText().toString(),phone_no.getText().toString().trim(),security_question.getText().toString().trim().toLowerCase());
                         if(insert==true) {
                             Toast.makeText(getApplicationContext(), "Registered successfully!", Toast.LENGTH_SHORT).show();
                             ed_confirm.setText(null);
@@ -129,9 +129,4 @@ public class SignUp extends AppCompatActivity {
             }
         });
     }
-    /*
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-    }*/
 }

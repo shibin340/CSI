@@ -42,7 +42,7 @@ public class AdminAssignEmpID extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(),"Assigned unsuccessfully",Toast.LENGTH_SHORT).show();
                     }
                     else {
-                        Toast.makeText(getApplicationContext(),"Enter a vslid email",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Enter a valid email",Toast.LENGTH_SHORT).show();
                     }
                 }
             }

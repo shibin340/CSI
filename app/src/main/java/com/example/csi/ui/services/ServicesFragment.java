@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -74,7 +75,7 @@ public class ServicesFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_SENDTO);
                 intent.setData(Uri.parse("mailto:"));
-                intent.putExtra(Intent.EXTRA_EMAIL  , new String[] { "ansarisaifulla7@gmail.com" });
+                intent.putExtra(Intent.EXTRA_EMAIL  , new String[] { "contact@creditsystemsindia.com" });
                 intent.putExtra(Intent.EXTRA_SUBJECT, "Claim Request");
                 intent.putExtra(Intent.EXTRA_TEXT, "Request of payment claim of RS<<Enter amount here>>.(Also attach the image of your bill)");
                 startActivity(Intent.createChooser(intent, "Email via..."));
@@ -85,7 +86,7 @@ public class ServicesFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_SENDTO);
                 intent.setData(Uri.parse("mailto:"));
-                intent.putExtra(Intent.EXTRA_EMAIL  , new String[] { "ansarisaifulla7@gmail.com" });
+                intent.putExtra(Intent.EXTRA_EMAIL  , new String[] { "contact@creditsystemsindia.com" });
                 intent.putExtra(Intent.EXTRA_SUBJECT, "Document Request");
                 intent.putExtra(Intent.EXTRA_TEXT, "<<Specify the documents required>>");
                 startActivity(Intent.createChooser(intent, "Email via..."));
@@ -96,7 +97,7 @@ public class ServicesFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_SENDTO);
                 intent.setData(Uri.parse("mailto:"));
-                intent.putExtra(Intent.EXTRA_EMAIL  , new String[] { "ansarisaifulla7@gmail.com" });
+                intent.putExtra(Intent.EXTRA_EMAIL  , new String[] { "contact@creditsystemsindia.com" });
                 intent.putExtra(Intent.EXTRA_SUBJECT, "Advance Payment Request");
                 intent.putExtra(Intent.EXTRA_TEXT, "Request of advance payment of current month.(Also attach the image of your salary slip)");
                 startActivity(Intent.createChooser(intent, "Email via..."));
@@ -108,6 +109,12 @@ public class ServicesFragment extends Fragment {
                 Intent intent1=new Intent(getActivity().getApplicationContext(), Laptop.class);
                 intent1.putExtra("username",msg);
                 startActivity(intent1);
+            }
+        });
+        attendancebt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity().getApplicationContext(),"Coming soon",Toast.LENGTH_SHORT).show();
             }
         });
         return root;

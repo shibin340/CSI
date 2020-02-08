@@ -39,7 +39,7 @@ public class AdminAssignLaptop extends AppCompatActivity {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int day) {
                         month = month + 1;
-                        String date = day + "/" + month + "/" + year;
+                        String date = day + "-" + month + "-" + year;
                         issue_date.setText(date);
                         issue_date.setTextColor(getResources().getColor(R.color.BLACK));
                     }

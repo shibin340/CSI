@@ -38,7 +38,7 @@ public class AdminAssignDOJ extends AppCompatActivity {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int day) {
                         month = month + 1;
-                        String date = day + "/" + month + "/" + year;
+                        String date = day + "-" + month + "-" + year;
                         doj_date.setText(date);
                         doj_date.setTextColor(getResources().getColor(R.color.BLACK));
                     }
@@ -70,7 +70,7 @@ public class AdminAssignDOJ extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(),"Assigned unsuccessfully",Toast.LENGTH_SHORT).show();
                     }
                     else {
-                        Toast.makeText(getApplicationContext(),"Enter a vslid email",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Enter a valid email",Toast.LENGTH_SHORT).show();
                     }
                 }
             }

@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Bitmap;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -20,8 +21,11 @@ import java.util.StringTokenizer;
 public class DatabaseHelper extends SQLiteOpenHelper {
     private ByteArrayOutputStream byteArrayOutputStream;
     private byte[] imageintobytes;
-    public DatabaseHelper(@Nullable Context context) {
+    Context mcontext;
+    public DatabaseHelper(@Nullable Context context)
+    {
         super(context, "Login.db", null, 1);
+        mcontext=context;
     }
 
     @Override
@@ -35,14 +39,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     //Insertion
-    public boolean insert(String username,String email,String password,String dob,String task1,String phno,String answer){
+    public boolean insert(String username,String email,String password,String dob,String phno,String answer){
         SQLiteDatabase db= this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("username",username);
         contentValues.put("email",email);
         contentValues.put("dob",dob);
         contentValues.put("password",password);
-        contentValues.put("task",task1);
+        contentValues.put("task","No task assigned");
         contentValues.put("completed",0);
         contentValues.put("isAuthorized",0);
         contentValues.put("Phonenum",phno);
@@ -69,7 +73,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return true;
     }
 
-
     //Check if email exists
     public boolean checkmail(String email){
         SQLiteDatabase db = this.getReadableDatabase();
@@ -83,7 +86,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //Check mail and password
     public Boolean chkmailpass(String email,String password){
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("select * from user where email= ? and password = ?",new String[]{email,password});
+        Cursor cursor = db.rawQuery("select username from user where email= ? and password = ?",new String[]{email,password});
         if(cursor.getCount()>0)
             return true;
         else
@@ -94,7 +97,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Boolean checkapproval(String email)
     {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("select * from user where email = '"+email+"' and isAuthorized = 1",null);
+        Cursor cursor = db.rawQuery("select username from user where email = '"+email+"' and isAuthorized = 1",null);
         if(cursor.getCount()>0)
             return true;
         else
@@ -149,7 +152,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Calendar calendar = Calendar.getInstance();
         int date = calendar.get(Calendar.DAY_OF_MONTH);
         int month = calendar.get(Calendar.MONTH);
-        String datewithoutyear = date+"/"+(month+1);
+        String datewithoutyear = date+"-"+(month+1);
         Log.d("123",datewithoutyear);
         Cursor cursor = db.rawQuery("Select username,email,dob from user where dob like '" +datewithoutyear + "%' ",null);
         return cursor;
@@ -228,13 +231,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
     public Cursor getimage(String mail)
     {
-        SQLiteDatabase db=this.getReadableDatabase();
-        Cursor cursor=db.rawQuery("select image from user where email ='"+mail+"'",null);
-        return cursor;
+
+            SQLiteDatabase db = this.getReadableDatabase();
+            Cursor cursor = db.rawQuery("select image from user where email ='" + mail + "'", null);
+            return cursor;
     }
     public Cursor getProfileData(String mail){
         SQLiteDatabase db=this.getReadableDatabase();
-        Cursor cursor=db.rawQuery("select * from user where email ='"+mail+"'",null);
+        Cursor cursor=db.rawQuery("select username,email,dob,Phonenum,Address,Nationality,UID,PAN,Language,Education,task,DOJ from user where email ='"+mail+"'",null);
         return cursor;
     }
     public  boolean update_profile(String new_email,String old_email,String number,String dob,String address,String nation,String uid,String pan,String language,String education){
@@ -303,4 +307,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("update user set password =? where email=?",new String[]{password,email});
         return true;
     }
+
+
 }

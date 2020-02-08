@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
@@ -51,7 +52,7 @@ public class ProfileFragment extends Fragment {
         db= new DatabaseHelper(getActivity().getApplicationContext());
         Cursor mcursor,cursor;
         cursor = db.getProfileData(msg);
-        mcursor=db.getimage(msg);
+
         cursor.moveToFirst();
         String phno = cursor.getString(cursor.getColumnIndex("Phonenum"));
         user_number_tv.setText(phno);
@@ -81,7 +82,13 @@ public class ProfileFragment extends Fragment {
         if(doj!=null)
             user_doj_tv.setText(doj);
         user_email_tv.setText(msg);
+        try{
+        mcursor=db.getimage(msg);
         getprofile(mcursor);
+        }
+        catch (Exception e){
+            Toast.makeText(getActivity(),"Size too big",Toast.LENGTH_SHORT).show();
+        }
         edit_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
