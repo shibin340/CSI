@@ -35,4 +35,9 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.10.0'
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+
+    implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:2.0.1'
+    implementation "com.almworks.sqlite4java:sqlite4java:1.0.392"
+    implementation "com.almworks.sqlite4java:libsqlite4java-osx:1.0.392"
+
 }

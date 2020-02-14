@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -22,6 +23,7 @@ public class Data_Adapter extends RecyclerView.Adapter<Data_Adapter.Data_view_ho
 
     private Context mcontext;
     private Cursor mcursor;
+    DatabaseHelper db;
     public Data_Adapter(Context context, Cursor cursor)
     {
         mcontext=context;
@@ -38,35 +40,55 @@ public class Data_Adapter extends RecyclerView.Adapter<Data_Adapter.Data_view_ho
     @Override
     public void onBindViewHolder(@NonNull final Data_view_holder holder, int position) {
 
-        String User="username";
-        if(!mcursor.moveToPosition(position))
-        {
-            return;
-        }
-        final String username = mcursor.getString(mcursor.getColumnIndex(User));
-        final String email = mcursor.getString(mcursor.getColumnIndex("email"));
-        byte[] imagebyte = mcursor.getBlob(mcursor.getColumnIndex("image"));
-        if(imagebyte!=null)
-        {
-            ByteArrayInputStream inputStream = new ByteArrayInputStream(imagebyte);
-            Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
-            holder.img_user.setImageBitmap(bitmap);
-        }
-        else
-        {
-            holder.img_user.setBackgroundResource(R.drawable.ic_person_black_24dp);
 
-        }
-        holder.txt_search_result.setText(username);
-        holder.cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(mcontext,UserData.class);
-                intent.putExtra("FileName",email);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                mcontext.startActivity(intent);
+
+            db=new DatabaseHelper(mcontext);
+            String User = "username";
+            if (!mcursor.moveToPosition(position)) {
+                return;
             }
-        });
+            final String username = mcursor.getString(mcursor.getColumnIndex(User));
+            final String email = mcursor.getString(mcursor.getColumnIndex("email"));
+            //try block for blob exception
+        try {
+            Cursor cursor1=db.getimage(email);
+
+             if((cursor1 != null) && (cursor1.getCount() > 0)) {
+                if (cursor1.moveToFirst()) {
+                do {
+                    if (cursor1.getBlob(cursor1.getColumnIndex("image")) != null) {
+                        byte[] imagebyte = cursor1.getBlob(cursor1.getColumnIndex("image"));
+                         ByteArrayInputStream inputStream = new ByteArrayInputStream(imagebyte);
+                         Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+                        holder.img_user.setImageBitmap(bitmap);
+                    }
+                    else {
+                        holder.img_user.setBackgroundResource(R.drawable.ic_person_black_24dp);
+                    }
+                } while (cursor1.moveToNext());
+            }
+            }
+            else
+            {
+                holder.img_user.setBackgroundResource(R.drawable.ic_person_black_24dp);
+            }
+            }
+            catch (Exception e)
+            {
+                Toast.makeText(mcontext,e.getMessage(),Toast.LENGTH_SHORT).show();
+
+            }
+            holder.txt_search_result.setText(username);
+            holder.cardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(mcontext, UserData.class);
+                    intent.putExtra("FileName", email);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    mcontext.startActivity(intent);
+                }
+            });
+
     }
 
     @Override

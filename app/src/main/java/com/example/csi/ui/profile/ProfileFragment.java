@@ -82,12 +82,12 @@ public class ProfileFragment extends Fragment {
         if(doj!=null)
             user_doj_tv.setText(doj);
         user_email_tv.setText(msg);
-        try{
-        mcursor=db.getimage(msg);
-        getprofile(mcursor);
+        try {
+            mcursor=db.getimage(msg);
+            getprofile(mcursor);
         }
         catch (Exception e){
-            Toast.makeText(getActivity(),"Size too big",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(),e.getMessage(),Toast.LENGTH_SHORT).show();
         }
         edit_profile.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -76,7 +76,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //Check if email exists
     public boolean checkmail(String email){
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("Select * from user where email = ?", new String[]{email});
+        Cursor cursor = db.rawQuery("Select username from user where email = ?", new String[]{email});
         if(cursor.getCount()>0)
             return false;
         else
@@ -141,8 +141,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //Retrieve data
     public Cursor allData(){
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("Select * from user",null);
-        return cursor;
+        Cursor cursor=null;
+        try
+        {
+             cursor = db.rawQuery("Select username,email from user",null);
+            return cursor;
+        }
+        catch (Exception e)
+        {
+            Toast.makeText(mcontext,e.getMessage(),Toast.LENGTH_SHORT).show();
+            return cursor;
+        }
+
     }
 
     //Notifications list
@@ -169,8 +179,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //Retrieve user data
     public Cursor userdata(String email){
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("Select username,email,dob,Phonenum,image,EmpID from user where email = '" +email+ "' ",null);
-        return cursor;
+        Cursor cursor=null;
+        try
+        {
+         cursor = db.rawQuery("Select username,email,dob,Phonenum,EmpID from user where email = '" +email+ "' ",null);
+            return cursor;
+        }
+        catch (Exception e)
+        {
+            Toast.makeText(mcontext,e.getMessage(),Toast.LENGTH_SHORT).show();
+            return cursor;
+        }
+        /*Cursor cursor = db.rawQuery("Select username,email,dob,Phonenum,image,EmpID from user where email = '" +email+ "' ",null);
+        return cursor;*/
     }
 
     //Retrieve task of user
@@ -205,8 +226,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Cursor searchData(String data)
     {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("Select username,email,image from user where username like '%" +data+ "%' OR EmpID like '%" +data+ "' ",null);
-        return cursor;
+        Cursor cursor=null;
+        try
+        {
+         cursor = db.rawQuery("Select username,email from user where username like '%" +data+ "%' OR EmpID like '%" +data+ "' ",null);
+            return cursor;
+        }
+        catch (Exception e)
+        {
+            Toast.makeText(mcontext,e.getMessage(),Toast.LENGTH_SHORT).show();
+            return cursor;
+        }
+
+       /* Cursor cursor = db.rawQuery("Select username,email,image from user where username like '%" +data+ "%' OR EmpID like '%" +data+ "' ",null);
+        return cursor;*/
     }
 
     public boolean storeimage(Bitmap img,String email)
@@ -232,9 +265,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Cursor getimage(String mail)
     {
 
-            SQLiteDatabase db = this.getReadableDatabase();
-            Cursor cursor = db.rawQuery("select image from user where email ='" + mail + "'", null);
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor=null;
+        try
+        {
+             cursor = db.rawQuery("select image from user where email ='" + mail + "'", null);
+             return cursor;
+        }
+        catch (Exception e)
+        {
+            Toast.makeText(mcontext,e.getMessage(),Toast.LENGTH_SHORT).show();
             return cursor;
+        }
+
+            /*Cursor cursor = db.rawQuery("select image from user where email ='" + mail + "'", null);
+            return cursor;*/
     }
     public Cursor getProfileData(String mail){
         SQLiteDatabase db=this.getReadableDatabase();

@@ -29,24 +29,36 @@ public class csiDirectory extends AppCompatActivity {
             public void onClick(View v) {
                 if(etdata.getText().toString().trim().equals(""))
                 {
-                    Cursor cursor = db.allData();
-                    Toast.makeText(getApplicationContext(),"Enter data to search",Toast.LENGTH_SHORT).show();
-                    recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-                    mAdapter=new Data_Adapter(getApplicationContext(),cursor);
-                    recyclerView.setAdapter(mAdapter);
+                   // try {
+                     //   Cursor cursor = db.allData();
+                        Toast.makeText(getApplicationContext(), "Enter data to search", Toast.LENGTH_SHORT).show();
+                        /*recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                        mAdapter = new Data_Adapter(getApplicationContext(), cursor);
+                        recyclerView.setAdapter(mAdapter);
+                    }
+                    catch (Exception e)
+                    {
+                        Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_SHORT).show();
+
+                    }*/
                 }
                 else
                 {
                     String search = etdata.getText().toString().trim();
-                    Cursor cursor = db.searchData(search);
-                    if(cursor.getCount()==0)
-                    {
-                        Toast.makeText(getApplicationContext(),"No data found",Toast.LENGTH_SHORT).show();
+                    try {
+                        Cursor cursor = db.searchData(search);
+                        if (cursor.getCount() == 0) {
+                            Toast.makeText(getApplicationContext(), "No data found", Toast.LENGTH_SHORT).show();
+                        } else {
+                            recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                            mAdapter = new Data_Adapter(getApplicationContext(), cursor);
+                            recyclerView.setAdapter(mAdapter);
+                        }
                     }
-                    else {
-                        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-                        mAdapter=new Data_Adapter(getApplicationContext(),cursor);
-                        recyclerView.setAdapter(mAdapter);
+                    catch (Exception e)
+                    {
+                        Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_SHORT).show();
+
                     }
                 }
             }
